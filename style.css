@@ -1,433 +1,2451 @@
+/* Permite un desplazamiento suave en toda la página */
+html {
+    scroll-behavior: smooth;
+}
 
-        body { font-family: 'Segoe UI', Arial, sans-serif; margin: 0; padding: 0; color: #333; }
-        header { background: linear-gradient(90deg, #046E00, #18B848); color: white; padding: 40px; text-align: center; }
-        header h1 { margin: 0; font-size: 2.5em; }
-        header p { font-size: 1.2em; }
+/* Base y Fondo */
 
-        nav { background: #f8f8f8; padding: 15px; text-align: center; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        nav a { margin: 0 20px; text-decoration: none; color: #046E00; font-weight: bold; transition: color 0.3s; }
-        nav a:hover { color: #18B848; }
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+        url('img/001.png');
+    background-repeat: repeat-y;
+    background-position: center top;
+    background-size: 500px auto;
+    background-attachment: fixed;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
 
-        section { padding: 40px; max-width: 1200px; margin: auto; }
-        section h2 { color: #000000; margin-bottom: 20px; }
+/* Layout Principal y Media Luna */
+.layout {
+    display: flex;
+    height: 100vh;
+}
 
-        #institucion img { width: 300px; margin: 10px; border-radius: 8px; box-shadow: 0 4px 10px rgba(0,0,0,0.2); }
-
-        .carreras-container { display: flex; justify-content: space-around; flex-wrap: wrap; }
-        .carrera { background: #fff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); margin: 15px; width: 280px; text-align: center; transition: transform 0.3s; }
-        .carrera:hover { transform: translateY(-5px); }
-        .carrera img { width: 100%; height: 180px; object-fit: cover; border-radius: 10px 10px 0 0; }
-        .carrera h3 { margin: 15px 0 10px; color: #18B848; }
-        .carrera p { padding: 0 15px 20px; }
-        .carrera a { display: inline-block; margin-bottom: 15px; color: #046E00; font-weight: bold; text-decoration: none; }
-        .carrera a:hover { color: #18B848; }
-
-        .acciones { text-align: center; margin: 40px 0; }
-        .acciones a { 
-            display: inline-block; 
-            margin: 15px; 
-            padding: 15px 25px; 
-            background: #046E00; 
-            color: white; 
-            text-decoration: none; 
-            border-radius: 8px; 
-            font-weight: bold; 
-            transition: background 0.3s; 
-            position: relative;
-        }
-        .acciones a:hover { background: #328744; }
-
-        /* Tooltip */
-        .acciones a::after {
-            content: attr(data-tooltip);
-            position: absolute;
-            bottom: -35px;
-            left: 50%;
-            transform: translateX(-50%);
-            background: #333;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-            white-space: nowrap;
-        }
-        .acciones a:hover::after {
-            opacity: 1;
-        }
-
-        /* Botón especial para portal del estudiante */
-        .portal-estudiante {
-            background: #ff8800;
-        }
-        .portal-estudiante:hover {
-            background: #ff6600;
-        }
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            background: url('imagen1.jpg') no-repeat center center fixed;
-            background-size: cover;
-            filter: blur(8px);
-            opacity: 0.6;
-            z-index: -1;
-        }
-        #campus {
-    position: relative;
-    width: 100%;
-    height: 100vh; /* ocupa toda la altura de la pantalla */
-    background: url('campus.jpg') no-repeat center center;
-    background-size: cover;
+.media-luna {
+    width: 40%;
+    height: 100%;
+    background: #691c32; /* Guinda Edomex */
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-#info-campus {
-    padding: 50px;
+.escudo-container {
     text-align: center;
-    background: rgba(0, 128, 64, 0.3); /* verde plano */
-    color: white;
-}
-
-#info-campus h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
     color: #ffffff;
 }
 
-.info-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
+.escudo {
+    width: 65%;
+    height: auto;
+    margin-bottom: 15px;
 }
 
-.info-card {
-    background: rgba(255, 255, 255, 0.6);
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    width: 280px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    transition: transform 0.3s, box-shadow 0.3s;
-    text-align: left;
-}
-
-.info-card h3 {
-    color: #008040;
-    margin-bottom: 10px;
-}
-
-.info-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-header {
-    background: url('imagen9.jpg') no-repeat center center;
-    background-size: cover;
-    color: white;
-    padding: 60px;
-    text-align: center;
-}
-/* Sticker flotante */
-/* Sticker flotante */
-#help-sticker {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #008040; /* verde corporativo */
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: background 0.3s;
-    z-index: 1000;
-}
-#help-sticker:hover {
-    background: #00cc66;
-}
-
-/* Imagen dentro del sticker */
-/* Sticker flotante */
-#help-sticker {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #008040; /* verde corporativo */
-    color: white;
-    padding: 10px 15px;
-    border-radius: 50px;
-    cursor: pointer;
+.numero {
+    font-size: 18px;
     font-weight: bold;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    transition: background 0.3s;
-    z-index: 1000;
+}
+
+/* Títulos y Encabezados */
+.titulo {
+    flex: 1;
     display: flex;
     align-items: center;
-    gap: 8px; /* espacio entre imagen y texto */
-}
-#help-sticker:hover {
-    background: #00cc66;
+    justify-content: center;
 }
 
-/* Imagen dentro del sticker */
-.sticker-icon {
-    width: 24px;
-    height: 24px;
-}
-
-/* Caja de ayuda oculta */
-#help-box {
-    position: fixed;
-    bottom: 80px;
-    right: 20px;
-    background: white;
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    width: 250px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    display: none; /* inicialmente oculto */
-    z-index: 999;
-}
-#help-box h3 {
-    margin-top: 0;
-    color: #008040;
-}
-
-header h1 {
+.titulo h1 {
+    font-size: 48px;
+    color: #691c32;
     margin: 0;
-    font-size: 2.5em;
-    color: #000000; /* título en amarillo para destacar */
-}
-
-header p {
-    font-size: 1.2em;
-    color: #000000; /* subtítulo en gris claro */
-}
-/* periodico */
-#pizarron {
-    padding: 50px;
-    background: #f5f5f5; /* fondo claro tipo periódico */
-    text-align: center;
-}
-
-#pizarron h2 {
-    font-size: 2.5em;
-    margin-bottom: 30px;
-    color: #008040; /* verde corporativo */
-    text-transform: uppercase;
-    border-bottom: 3px solid #008040;
-    display: inline-block;
-    padding-bottom: 5px;
-}
-
-.news-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.news-card {
-    background: white;
-    color: #333;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    text-align: left;
-    transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.news-card h3 {
-    color: #008040;
-    margin-bottom: 10px;
-    font-size: 1.3em;
-}
-
-.news-card p {
-    font-size: 1em;
-    line-height: 1.5;
-}
-
-.news-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
-}
-/* descargas */
-#descargas {
-    padding: 50px;
-    background: #008040; /* verde corporativo */
-    text-align: center;
-    color: white;
-}
-
-#descargas h2 {
-    font-size: 2.2em;
-    margin-bottom: 30px;
-    color: #ffffff; /* amarillo para destacar */
-}
-
-.download-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-.download-btn {
-    display: inline-block;
-    padding: 15px 25px;
-    background: white;
-    color: #008040;
     font-weight: bold;
-    text-decoration: none;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background 0.3s, transform 0.3s;
 }
 
-.download-btn:hover {
-    background: #95FCA1;
-    color: #333;
-    transform: translateY(-3px);
+.encabezado {
+    text-align: center;
+    padding: 40px 20px;
+    background: #691c32;
+    color: #ffffff;
 }
-/* nav dinamico */
-nav {
-    position: sticky;   /* se pega al scroll */
-    top: 0;             /* se mantiene arriba */
-    background: #008040; /* verde corporativo */
+
+.encabezado h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+}
+
+/* Navbar */
+.navbar {
+    background: #691c32;
+    color: #ffffff;
     padding: 15px;
-    text-align: center;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-    z-index: 1000;      /* se asegura de estar encima del contenido */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-nav a {
-    margin: 0 20px;
+.navbar .logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.menu li {
+    margin: 0 15px;
+}
+
+.menu li a {
+    color: #ffffff;
     text-decoration: none;
-    color: #ffffff;     /* letras blancas */
     font-weight: bold;
-    transition: color 0.3s;
 }
 
-nav a:hover {
-    color: #95FCA1;     /* amarillo al pasar el cursor */
+.menu li a:hover {
+    text-decoration: underline;
 }
-/* Botones */
-.download-btn {
-    display: inline-block;
-    padding: 15px 25px;
-    background: white;
-    color: #008040;
-    font-weight: bold;
-    border: none;
-    border-radius: 8px;
+
+.menu-toggle {
+    display: none;
+    font-size: 24px;
     cursor: pointer;
-    margin: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    transition: background 0.3s, transform 0.3s;
-}
-.download-btn:hover {
-    background: #ffdd00;
-    color: #333;
-    transform: translateY(-3px);
 }
 
-/* Modal */
-.modal {
-    display: none; /* oculto por defecto */
+.menu.active {
+    display: flex;
+}
+
+/* Secciones Generales */
+section {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+section h2 {
+    color: #691c32;
+    margin-bottom: 20px;
+}
+
+section ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+section ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+/* Sección Oferta Educativa */
+section#oferta {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+section#oferta h2 {
+    font-size: 32px;
+    color: #691c32;
+    margin-bottom: 25px;
+}
+
+.oferta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background: #691c32;
+    color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05);
+    background: #4a1323;
+}
+
+/* Secciones de Carreras */
+.carrera {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px 0;
+    height: 300px;
+}
+
+.imagen-carrera {
+    width: 70%;
+    height: auto;
+}
+
+.contenido {
+    flex: 1;
+    padding: 30px;
+}
+
+.contenido h2 {
+    font-size: 32px;
+    color: #691c32;
+    margin-bottom: 15px;
+}
+
+.contenido p {
+    font-size: 18px;
+    color: #555555;
+}
+
+.izquierda .media-luna {
+    border-radius: 0 100% 100% 0;
+    order: 0;
+}
+
+.izquierda .contenido {
+    order: 1;
+}
+
+.derecha .media-luna {
+    border-radius: 100% 0 0 100%;
+    order: 1;
+}
+
+.derecha .contenido {
+    order: 0;
+}
+
+/* Sección Directivos */
+section#directivos {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+section#directivos h2 {
+    color: #691c32;
+    margin-bottom: 30px;
+    font-size: 32px;
+}
+
+.directivos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 30px;
+    justify-items: center;
+}
+
+.circle {
+    background: #ffffff;
+    border-radius: 50%;
+    width: 160px;
+    height: 160px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+}
+
+.foto-directivo {
+    width: 90%;
+    height: auto;
+    border-radius: 100%;
+    margin-bottom: 8px;
+}
+
+.puesto {
+    font-size: 14px;
+    color: #691c32;
+    margin: 0;
+}
+
+/* Pósteres e Imágenes Ampliables */
+.posteres-container {
+    margin-top: 30px;
+    padding: 20px 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.grid-posteres {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    align-items: stretch;
+    margin-top: 20px;
+}
+
+.poster-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.poster-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.imagen-poster {
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    object-position: top;
+    cursor: pointer;
+    transition: filter 0.2s ease;
+}
+
+.imagen-poster:hover {
+    filter: brightness(0.92);
+}
+
+/* Modal Visor */
+.modal-visor {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    box-sizing: border-box;
+    backdrop-filter: blur(5px);
+}
+
+.modal-visor.active {
+    display: flex;
+    animation: fadeIn 0.3s ease;
+}
+
+.imagen-modal {
+    max-width: 90%;
+    max-height: 90vh;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+}
+
+.cerrar-modal:hover {
+    color: #cccccc;
+}
+
+/* Botón Ir Arriba */
+#btn-ir-arriba {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    width: 45px;
+    height: 45px;
+    background-color: #691c32;
+    color: #ffffff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(0) scale(0.8);
+    transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.3s;
+}
+
+#btn-ir-arriba.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0) scale(1);
+    animation: popIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+#btn-ir-arriba.lanzar {
+    animation: lanzarDeGolpe 0.4s cubic-bezier(0.55, 0.055, 0.675, 0.19) forwards;
+}
+
+#btn-ir-arriba:hover {
+    background-color: #4a1323;
+    transform: scale(1.1);
+}
+
+/* Footer Institucional Edomex */
+.footer-edomex {
+    position: relative;
+    background-color: #691c32;
+    color: #ffffff;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    margin-top: 100px;
+}
+
+.colibri-container {
+    position: absolute;
+    top: -75px;
+    right: 40px;
+    z-index: 10;
+    pointer-events: none;
+}
+
+.colibri-img {
+    width: 140px;
+    height: auto;
+    filter: drop-shadow(0px 6px 8px rgba(0, 0, 0, 0.3));
+    transition: transform 0.4s ease;
+}
+
+.footer-edomex:hover .colibri-img {
+    transform: translateY(-5px) scale(1.03);
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.footer-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 30px;
+}
+
+.footer-col h3 {
+    font-size: 16px;
+    border-bottom: 2px solid #bc955c;
+    padding-bottom: 8px;
+    margin-bottom: 12px;
+    color: #f3e5ab;
+}
+
+.footer-col p, .footer-col li {
+    font-size: 13px;
+    line-height: 1.6;
+    margin-bottom: 6px;
+}
+
+.footer-col a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.footer-col a:hover {
+    color: #f3e5ab;
+}
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-derechos {
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+    margin-top: 30px;
+    padding-top: 15px;
+    font-size: 12px;
+    opacity: 0.85;
+}
+
+/* Animaciones y Responsivo */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@keyframes lanzarDeGolpe {
+    0% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+    30% {
+        transform: translateY(10px) scale(0.9);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-500px) scale(0.5);
+    }
+}
+
+@media (max-width: 768px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        background: #691c32;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+    }
+
+    .menu li {
+        margin: 15px 0;
+        text-align: center;
+    }
+
+    .menu-toggle {
+        display: block;
+    }
+
+    .menu.show {
+        display: flex;
+    }
+}
+
+@media (max-width: 600px) {
+    .grid-posteres {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .colibri-container {
+        top: -55px;
+        right: 15px;
+    }
+
+    .colibri-img {
+        width: 90px;
+    }
+}
+/* Estilos para Sección de Anuncios y Novedades */
+#anuncios-novedades .seccion-sub {
+    color: #666666;
+    margin-top: -10px;
+    margin-bottom: 25px;
+    font-size: 15px;
+}
+
+.anuncios-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+.anuncio-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anuncio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.anuncio-card.destacado {
+    border-left: 5px solid #691c32;
+    background-color: #fdfbfb;
+}
+
+.anuncio-badge {
+    align-self: flex-start;
+    background-color: #691c32;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 10px;
+}
+
+.anuncio-badge.secundario {
+    background-color: #bc955c; /* Dorado institucional */
+}
+
+.anuncio-fecha {
+    font-size: 12px;
+    color: #888888;
+    margin-bottom: 8px;
+    display: block;
+}
+
+.anuncio-card h3 {
+    font-size: 18px;
+    color: #691c32;
+    margin: 0 0 10px 0;
+    line-height: 1.3;
+}
+
+.anuncio-card p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 15px;
+}
+
+.btn-anuncio {
+    color: #691c32;
+    font-weight: bold;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.btn-anuncio:hover {
+    color: #4a1323;
+    text-decoration: underline;
+}
+/* Subtítulo de Oferta Educativa */
+.seccion-sub-oferta {
+    text-align: center;
+    margin-top: 20px;
+    color: #555555;
+    font-size: 15px;
+}
+
+/* Grilla de Tarjetas */
+.oferta-grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+/* Tarjeta Contenedora */
+.carrera-card-oferta {
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.carrera-card-oferta:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Imagen Atractiva de la Carrera */
+.imagen-carrera-card {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* Cuerpo de la Tarjeta */
+.carrera-card-body {
+    padding: 18px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.carrera-card-body h3 {
+    color: #691c32;
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.carrera-card-body p {
+    font-size: 14px;
+    color: #555555;
+    line-height: 1.4;
+    margin-bottom: 15px;
+}
+
+/* Desplegable de Competencias */
+.desplegable-carrera {
+    margin-top: 10px;
+    background-color: #ffffff;
+    border: 1px solid #691c32;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: left;
+}
+
+.desplegable-carrera summary {
+    background-color: #691c32;
+    color: #ffffff;
+    padding: 10px 14px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.desplegable-carrera summary:hover {
+    background-color: #4a1323;
+}
+
+.contenido-desplegable {
+    padding: 12px 15px;
+    background-color: #fdfbfb;
+    font-size: 13px;
+    color: #333333;
+}
+
+.contenido-desplegable p {
+    margin: 0 0 6px 0;
+    color: #691c32;
+}
+
+.contenido-desplegable ul {
+    margin: 0;
+    padding-left: 18px;
+    color: #555555;
+}
+
+.contenido-desplegable li {
+    margin-bottom: 4px;
+}
+/* Grilla de Tarjetas de Oferta Educativa */
+.oferta-grid-tarjetas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+    align-items: start; /* Mantiene cada tarjeta con su propia altura sin estirar las de los lados */
+}
+/* Contenedor flexible en línea para los botones */
+.alumnos-botones-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+/* Botones con borde delimitado y tamaño según el contenido */
+.btn-alumno {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    background-color: #ffffff;
+    color: #691c32;
+    border: 2px solid #691c32;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    width: fit-content; /* Asegura que no ocupe todo el ancho */
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Efecto hover */
+.btn-alumno:hover {
+    background-color: #691c32;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(105, 28, 50, 0.2);
+}
+/* Contenedor flexible para los botones de Trámites */
+.tramites-botones-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 15px;
+    align-items: center;
+}
+
+/* Botones interactivos de Trámites */
+.btn-tramite {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    background-color: #ffffff;
+    color: #691c32;
+    border: 2px solid #691c32;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    width: fit-content; /* No ocupa toda la pantalla */
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-tramite:hover:not(.inhabilitado) {
+    background-color: #691c32;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(105, 28, 50, 0.2);
+}
+
+/* Estilo distintivo para opciones inhabilitadas */
+.btn-tramite.inhabilitado {
+    color: #888888;
+    border-color: #cccccc;
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+/* Grid para Tarjetas de Trámites y Servicios */
+.tramites-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Tarjeta de Trámite individual */
+.tramite-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-left: 4px solid #691c32; /* Borde institucional guinda */
+    border-radius: 8px;
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.tramite-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(105, 28, 50, 0.12);
+}
+
+.tramite-icon {
+    font-size: 24px;
+    margin-bottom: 8px;
+}
+
+.tramite-card h3 {
+    color: #691c32;
+    font-size: 17px;
+    margin: 0 0 8px 0;
+}
+
+.tramite-card p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+}
+
+/* Botón interno en tarjetas */
+.btn-tramite-card {
+    align-self: flex-start;
+    color: #691c32;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.btn-tramite-card:hover {
+    color: #4a1323;
+    text-decoration: underline;
+}
+
+/* Cuadro Informativo de Ventanilla */
+.aviso-ventanilla {
+    margin-top: 20px;
+    padding: 12px 18px;
+    background-color: #fdfbfb;
+    border: 1px dashed #691c32;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #333333;
+}
+/* Grid para las Tarjetas de Servicios para Alumnos */
+.servicios-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Estilo individual de Tarjeta de Servicio */
+.servicio-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #691c32; /* Línea superior institucional */
+    border-radius: 8px;
+    padding: 18px;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.servicio-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(105, 28, 50, 0.12);
+}
+
+.servicio-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.servicio-card h3 {
+    color: #691c32;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+.servicio-card p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0;
+}
+/* Grid para Tarjetas de Actividades Extracurriculares */
+.actividades-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Tarjeta individual de Actividad */
+.actividad-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #bc955c; /* Color dorado institucional para diferenciar de servicios */
+    border-radius: 8px;
+    padding: 18px;
+    text-align: left;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.actividad-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(188, 149, 92, 0.2);
+}
+
+.actividad-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.actividad-card h3 {
+    color: #691c32;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+.actividad-card p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0;
+}
+/* Grid para Requisitos de Inscripción */
+.requisitos-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Tarjeta individual de Requisito */
+.requisito-card {
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #691c32;
+    border-radius: 8px;
+    padding: 20px 18px 18px 18px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.requisito-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(105, 28, 50, 0.12);
+}
+
+/* Indicador de número de paso */
+.requisito-step {
+    position: absolute;
+    top: 10px;
+    right: 12px;
+    background-color: #f3e8eb;
+    color: #691c32;
+    font-weight: bold;
+    font-size: 12px;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.requisito-icon {
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+.requisito-card h3 {
+    color: #691c32;
+    font-size: 16px;
+    margin: 0 0 8px 0;
+}
+
+.requisito-card p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Caja de Advertencia / Nota */
+.alerta-asignacion {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 20px;
+    padding: 14px 18px;
+    background-color: #fff8e6;
+    border: 1px solid #ffe58f;
+    border-left: 4px solid #d48806;
+    border-radius: 6px;
+    color: #593800;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.alerta-icon {
+    font-size: 22px;
+}
+/* Grid para la sección de Asignación */
+.asignacion-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+/* Tarjetas individuales de Asignación */
+.asignacion-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.asignacion-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+.asignacion-card.destacado {
+    border-left: 4px solid #691c32;
+    background-color: #fdfbfb;
+}
+
+.asignacion-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.asignacion-card h3 {
+    color: #691c32;
+    font-size: 17px;
+    margin: 0 0 8px 0;
+}
+
+.asignacion-card p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0 0 15px 0;
+}
+
+/* Botón descargable en la tarjeta */
+.btn-asignacion {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 9px 15px;
+    background-color: #ffffff;
+    color: #691c32;
+    border: 2px solid #691c32;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    width: fit-content;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-asignacion:hover {
+    background-color: #691c32;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+
+/* Badge indicativo */
+.badge-estatus {
+    align-self: flex-start;
+    background-color: #f3e8eb;
+    color: #691c32;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 4px 10px;
+    border-radius: 12px;
+    text-transform: uppercase;
+}
+/* Grid para Tarjetas de Formación Dual */
+.dual-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+/* Tarjeta individual */
+.dual-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-top: 4px solid #691c32;
+    border-radius: 8px;
+    padding: 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.dual-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 16px rgba(105, 28, 50, 0.12);
+}
+
+.dual-icon {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.dual-card h3 {
+    color: #691c32;
+    font-size: 17px;
+    margin: 0 0 8px 0;
+}
+
+.dual-card p {
+    font-size: 13px;
+    color: #555555;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Caja Destacada / Call to Action */
+.dual-info-box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #fdfbfb;
+    border: 1px solid #e8d7dc;
+    border-left: 4px solid #691c32;
+    border-radius: 8px;
+}
+
+.dual-info-content h3 {
+    color: #691c32;
+    margin: 0 0 4px 0;
+    font-size: 16px;
+}
+
+.dual-info-content p {
+    margin: 0;
+    font-size: 13px;
+    color: #444444;
+}
+
+/* Botón con Borde */
+.btn-dual {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 18px;
+    background-color: #ffffff;
+    color: #691c32;
+    border: 2px solid #691c32;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: bold;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.2s ease;
+}
+
+.btn-dual:hover {
+    background-color: #691c32;
+    color: #ffffff;
+    transform: translateY(-2px);
+}
+/* Barra del Menú Principal */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+    min-height: 70px; /* Cambiado a min-height para no recortar el contenido desplegable */
+    background-color: #691c32;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Enlace/Marca del Logo */
+.nav-logo, nav h1, nav .logo {
+    display: flex;
+    align-items: center;
+    height: 70px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* --- ESCRITORIO (Pantallas grandes) --- */
+@media (min-width: 769px) {
+    nav ul {
+        display: flex !important;
+        align-items: center;
+        gap: 15px;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        height: 70px;
+    }
+
+    nav ul li {
+        display: flex;
+        align-items: center;
+        height: 100%;
+    }
+
+    nav ul li a {
+        display: inline-flex;
+        align-items: center;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        padding: 8px 12px;
+        transition: color 0.25s ease, background-color 0.25s ease;
+    }
+
+    nav ul li a:hover {
+        color: #bc955c;
+        background-color: rgba(255, 255, 255, 0.08);
+        border-radius: 4px;
+    }
+}
+
+/* --- MÓVIL / MENÚ HAMBURGUESA --- */
+@media (max-width: 768px) {
+    nav {
+        flex-wrap: wrap; /* Permite que la lista caiga abajo del logo */
+    }
+
+    /* Ajuste para que la lista ocupe todo el ancho al desplegarse */
+    nav ul {
+        width: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 10px 0 20px 0;
+        background-color: #691c32;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    nav ul li {
+        width: 100%;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 12px 15px;
+        color: #ffffff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 600;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav ul li a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+        color: #bc955c;
+    }
+}
+/* Contenedor del título con bordes redondeados */
+.layout {
+    display: flex !important;
+    align-items: center !important;
+    background-color: #691c32 !important; /* Fondo guinda */
+    border-radius: 16px !important; /* Esquinas redondeadas bien visibles */
+    padding: 15px 25px !important;
+    margin-top: 20px !important;
+    margin-bottom: 25px !important;
+    overflow: hidden !important; /* Recorta la media luna dentro de las esquinas */
+}
+
+/* Forzar que el texto interior siga siendo blanco */
+.layout h1,
+.layout .titulo h1,
+.layout .escudo-container p {
+    color: #ffffff !important;
+}
+/* Contenedor principal de la Mascota */
+.mascota-card-container {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
+
+/* Tarjeta principal estilo Glassmorphism ligero */
+.mascota-card {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 35px;
+    background: linear-gradient(135deg, #ffffff 0%, #fcf8f9 100%);
+    border: 1px solid #ebdada;
+    border-top: 5px solid #691c32;
+    border-radius: 16px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(105, 28, 50, 0.08);
+    max-width: 900px;
+    width: 100%;
+}
+
+/* Envoltorio de la imagen con marco moderno */
+.mascota-imagen-wrapper {
+    position: relative;
+    flex: 1 1 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(180deg, #f9f2f4 0%, #e9d5da 100%);
+    border-radius: 14px;
+    padding: 20px;
+    overflow: hidden;
+    box-shadow: inset 0 0 15px rgba(105, 28, 50, 0.05);
+}
+
+/* Resplandor de fondo suave */
+.mascota-bg-glow {
+    position: absolute;
+    width: 140px;
+    height: 140px;
+    background: rgba(188, 149, 92, 0.25); /* Tono dorado */
+    border-radius: 50%;
+    filter: blur(30px);
+    z-index: 1;
+}
+
+/* Imagen con efecto flotante y sombra proyectada */
+.mascota-img {
+    position: relative;
+    z-index: 2;
+    max-width: 100%;
+    height: auto;
+    max-height: 240px;
+    object-fit: contain;
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.18));
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mascota-card:hover .mascota-img {
+    transform: translateY(-6px) scale(1.04);
+}
+
+/* Etiqueta superpuesta en la imagen */
+.mascota-tag {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    z-index: 3;
+    background: rgba(105, 28, 50, 0.85);
+    backdrop-filter: blur(4px);
+    color: #ffffff;
+    font-size: 10px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+}
+
+/* Detalles de texto */
+.mascota-info {
+    flex: 2 1 300px;
+}
+
+.badge-mascota {
+    display: inline-block;
+    background-color: #f3e8eb;
+    color: #691c32;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.mascota-info h2 {
+    color: #691c32;
+    margin: 0 0 10px 0;
+    font-size: 24px;
+    font-weight: 800;
+}
+
+.mascota-info p {
+    color: #4a4a4a;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.mascota-valores {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.valor-pill {
+    background-color: #ffffff;
+    border: 1px solid #bc955c;
+    color: #691c32;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+}
+/* Grid responsive para la sección de Directivos */
+.directivos-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+    align-items: stretch;
+}
+
+/* Tarjeta individual de Directivo */
+.directivo-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.directivo-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(105, 28, 50, 0.12);
+}
+
+/* Resaltar la tarjeta del Director del Plantel */
+.directivo-card.destacado {
+    border-top: 4px solid #691c32;
+    background: linear-gradient(180deg, #ffffff 0%, #fdfbfb 100%);
+}
+
+/* Marco para fijar el tamaño de la imagen sin deformar */
+.directivo-foto-wrapper {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid #691c32;
+    margin-bottom: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #f5f5f5;
+}
+
+.directivo-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Evita que la foto se estire o deforme */
+    display: block;
+}
+
+/* Información del directivo */
+.directivo-info h3 {
+    color: #691c32;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+    line-height: 1.3;
+}
+
+.directivo-cargo {
+    font-size: 13px;
+    color: #666666;
+    font-weight: 500;
+}
+/* Estilo para avisos urgentes o cerrados */
+.anuncio-card.urgente {
+    border-left: 5px solid #d9534f; /* Rojo de advertencia */
+    background-color: #fff9f9;
+}
+
+.badge-anuncio.urgente {
+    background-color: #d9534f;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    text-transform: uppercase;
+}
+
+.anuncio-footer {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 1px dashed #e0e0e0;
+    font-size: 12px;
+    color: #666666;
+}
+/* Tarjeta de sección en mantenimiento */
+.mantenimiento-card {
+    background: linear-gradient(135deg, #ffffff 0%, #fffbf0 100%);
+    border: 1px solid #f0e1be;
+    border-top: 5px solid #bc955c; /* Tono dorado de advertencia/mantenimiento */
+    border-radius: 14px;
+    padding: 35px 25px;
+    text-align: center;
+    margin-top: 25px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.05);
+}
+
+.mantenimiento-icon {
+    font-size: 42px;
+    margin-bottom: 12px;
+}
+
+.mantenimiento-badge {
+    display: inline-block;
+    background-color: #fcefdc;
+    color: #8a6327;
+    font-size: 11px;
+    font-weight: 800;
+    padding: 5px 14px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+}
+
+.mantenimiento-card h2 {
+    color: #691c32;
+    font-size: 22px;
+    margin: 0 0 12px 0;
+}
+
+.mantenimiento-card p {
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.6;
+    max-width: 650px;
+    margin: 0 auto 20px auto;
+}
+
+.mantenimiento-nota {
+    display: inline-block;
+    background-color: #ffffff;
+    border: 1px dashed #bc955c;
+    color: #691c32;
+    padding: 10px 18px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+}
+/* Deshabilita la selección de texto en toda la página */
+body {
+    -webkit-user-select: none; /* Safari / Chrome en iOS */
+    -moz-user-select: none;    /* Firefox */
+    -ms-user-select: none;     /* Internet Explorer / Edge */
+    user-select: none;        /* Estándar */
+}
+
+/* Opcional: Permitir selección en campos donde el usuario sí deba escribir (si los hay) */
+input, textarea {
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text;
+}
+/* Deshabilita el arrastre y la selección en todas las imágenes */
+img {
+    -webkit-user-drag: none; /* Safari / Chrome */
+    user-drag: none;         /* Estándar */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: auto;    /* Permite clics normales pero evita interacciones de arrastre */
+}
+/* Modal de Aviso Institucional */
+.modal-aviso {
+    display: none;
     position: fixed;
     z-index: 2000;
     left: 0;
     top: 0;
     width: 100%;
     height: 100%;
-    overflow: auto;
-    background: rgba(0,0,0,0.5); /* fondo traslúcido */
+    background-color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
 }
 
-.modal-content {
-    background: #fff;
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 10px;
-    width: 300px;
-    text-align: left;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+.modal-aviso.active {
+    display: flex;
 }
 
-.close {
-    float: right;
-    font-size: 1.5em;
+.modal-contenido {
+    background-color: #ffffff;
+    border-top: 5px solid #691c32;
+    border-radius: 12px;
+    padding: 25px 30px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+    text-align: center;
+    animation: fadeInModal 0.3s ease-out;
+}
+
+@keyframes fadeInModal {
+    from { opacity: 0; transform: translateY(-15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.cerrar-btn {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 24px;
+    color: #888888;
     cursor: pointer;
-    color: #333;
-}
-.close:hover {
-    color: red;
-}
-
-.modal-content h3 {
-    color: #008040;
-    margin-top: 0;
-}
-
-.modal-content label {
-    display: block;
-    margin-top: 10px;
     font-weight: bold;
 }
 
-.modal-content input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+.cerrar-btn:hover {
+    color: #691c32;
 }
 
-.modal-content button {
+.modal-header-aviso {
+    margin-bottom: 15px;
+}
+
+.icon-aviso {
+    font-size: 36px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.modal-header-aviso h3 {
+    color: #691c32;
+    margin: 0;
+    font-size: 20px;
+}
+
+.modal-contenido p {
+    color: #555555;
+    font-size: 14px;
+    line-height: 1.5;
+    margin-bottom: 12px;
+}
+
+.btn-aceptar {
+    background-color: #691c32;
+    color: #ffffff;
+    border: none;
+    padding: 10px 24px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-aceptar:hover {
+    background-color: #521527;
+}
+/* Submenú en Trámites y Servicios */
+.tramites-submenu-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.submenu-card {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-left: 5px solid #691c32;
+    border-radius: 10px;
+    padding: 18px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.submenu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(105, 28, 50, 0.12);
+}
+
+.submenu-icon {
+    font-size: 28px;
+    margin-bottom: 8px;
+}
+
+.submenu-info h4 {
+    color: #691c32;
+    margin: 0 0 6px 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.submenu-info p {
+    color: #666666;
+    font-size: 13px;
+    line-height: 1.4;
+    margin: 0 0 12px 0;
+}
+
+.badge-click {
+    align-self: flex-start;
+    font-size: 12px;
+    font-weight: bold;
+    color: #691c32;
+    background-color: #f7eded;
+    padding: 4px 10px;
+    border-radius: 15px;
+}
+/* Estilos para el Menú Desplegable (Dropdown) */
+.nav-item.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Submenú oculto por defecto */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border-top: 3px solid #691c32;
+    padding: 8px 0;
+    list-style: none;
+    z-index: 1000;
+}
+
+/* Mostrar el submenú al pasar el cursor sobre el ítem */
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+    animation: fadeInDropdown 0.2s ease-in-out;
+}
+
+/* Animación suave de aparición */
+@keyframes fadeInDropdown {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos de las opciones del submenú */
+.dropdown-menu li a {
+    color: #333333 !important;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f7eded;
+    color: #691c32 !important;
+}
+/* Ajustes para mantener el menú desplegable dentro de la pantalla */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%); /* Centra el submenú respecto al botón */
+    background-color: #ffffff;
+    min-width: 220px;
+    max-width: 90vw; /* Evita que supere el ancho de la pantalla móvil */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    border-top: 3px solid #691c32;
+    padding: 8px 0;
+    list-style: none;
+    z-index: 1000;
+}
+
+/* En pantallas pequeñas o menú hamburguesa lateral */
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static; /* Se integra de forma fluida dentro del menú móvil */
+        transform: none;
+        width: 100%;
+        box-shadow: none;
+        background-color: #fdfbfb;
+        border-top: none;
+        border-left: 3px solid #691c32;
+        margin-top: 5px;
+        padding-left: 10px;
+    }
+}
+/* Posicionamiento del contenedor del submenú */
+.nav-item.dropdown {
+    position: relative;
+}
+
+/* Submenú en pantallas de escritorio */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0; /* Lo alinea hacia la izquierda para que no se salga del borde derecho */
+    left: auto;
+    background-color: #ffffff;
+    min-width: 210px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border-top: 3px solid #691c32;
+    padding: 8px 0;
+    list-style: none;
+    z-index: 1000;
+}
+
+/* Submenú desplegable */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none; /* Oculto por defecto */
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    min-width: 210px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    border-top: 3px solid #691c32;
+    padding: 8px 0;
+    list-style: none;
+    z-index: 1000;
+}
+
+/* Muestra el submenú únicamente cuando tiene la clase .active */
+.dropdown-menu.active {
+    display: block;
+    animation: fadeInDropdown 0.2s ease-in-out;
+}
+
+@keyframes fadeInDropdown {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.dropdown-menu li a {
+    color: #333333 !important;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    text-decoration: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-menu li a:hover {
+    background-color: #f7eded;
+    color: #691c32 !important;
+}
+
+@media (max-width: 768px) {
+    .dropdown-menu {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        background-color: #fdfbfb;
+        border-top: none;
+        border-left: 3px solid #691c32;
+        margin-top: 5px;
+        padding-left: 10px;
+    }
+}
+/* Estilos para el Modal de Inicio */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.65);
+    backdrop-filter: blur(4px);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-contenido {
+    background-color: #ffffff;
+    border-top: 6px solid #691c32;
+    border-radius: 12px;
+    padding: 25px 30px;
+    max-width: 480px;
+    width: 90%;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+    animation: popupAnimation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes popupAnimation {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.modal-header h2 {
+    color: #691c32;
+    margin-top: 0;
+    font-size: 22px;
+}
+
+.modal-texto p {
+    color: #333333;
+    line-height: 1.5;
+    font-size: 15px;
+}
+
+.cerrar-modal {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    font-size: 26px;
+    color: #888888;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.cerrar-modal:hover {
+    color: #691c32;
+}
+
+.btn-aceptar {
+    background-color: #691c32;
+    color: #ffffff;
+    border: none;
+    padding: 11px 20px;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
     margin-top: 15px;
     width: 100%;
-    padding: 10px;
-    background: #008040;
-    color: white;
-    border: none;
-    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-aceptar:hover {
+    background-color: #521527;
+}
+/* Tarjeta Informativa de Servicio Social Habilitado */
+.aviso-servicio-social {
+    background: #ffffff;
+    border: 2px solid #2e7d32;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 15px rgba(46, 125, 50, 0.12);
+    position: relative;
+    overflow: hidden;
+}
+
+.aviso-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+}
+
+.aviso-header h2 {
+    margin: 0;
+    color: #691c32;
+    font-size: 22px;
+}
+
+.badge-estado.habilitado {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border: 1px solid #a5d6a7;
     font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+}
+
+.aviso-body p {
+    color: #444444;
+    line-height: 1.6;
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.aviso-acciones {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-tramite-destacado {
+    background-color: #691c32;
+    color: #ffffff !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+}
+
+.btn-tramite-destacado:hover {
+    background-color: #521527;
+}
+
+.btn-tramite-externo {
+    background-color: #2e7d32;
+    color: #ffffff !important;
+    padding: 10px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: background-color 0.2s ease;
+    display: inline-block;
+}
+
+.btn-tramite-externo:hover {
+    background-color: #1b5e20;
+}
+/* Sección FAQ adaptada a tonos guinda */
+.faq-section {
+    padding: 60px 20px;
+    background-color: #fcf9f9; /* Fondo claro con un leve tinte cálido */
+}
+
+.faq-section .section-title {
+    text-align: center;
+    font-size: 2rem;
+    color: #691C32; /* Título en guinda institucional */
+    margin-bottom: 10px;
+}
+
+.faq-section .section-subtitle {
+    text-align: center;
+    color: #555555;
+    margin-bottom: 40px;
+}
+
+.faq-grid {
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.faq-item {
+    background: #ffffff;
+    border: 1px solid #e2d7d9; /* Borde discreto con subtono cálido */
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.faq-item[open] {
+    border-color: #691C32; /* Borde guinda al abrir */
+    box-shadow: 0 4px 12px rgba(105, 28, 50, 0.08); /* Sombra suave con tinte guinda */
+}
+
+.faq-question {
+    padding: 18px 20px;
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: #4A1021; /* Texto de la pregunta en guinda oscuro */
     cursor: pointer;
-}
-.modal-content button:hover {
-    background: #00cc66;
-}
-/* Mensaje de éxito */
-.success {
-    background: #d4edda;
-    color: #155724;
-    border: 1px solid #c3e6cb;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 15px 0;
-    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
 }
 
-/* Mensaje de error */
-.error {
-    background: #f8d7da;
-    color: #721c24;
-    border: 1px solid #f5c6cb;
-    padding: 10px;
-    border-radius: 5px;
-    margin: 15px 0;
-    font-weight: bold;
+.faq-question::-webkit-details-marker {
+    display: none;
 }
 
+.faq-icon {
+    font-size: 1.2rem;
+    color: #691C32;
+    transition: transform 0.3s ease;
+}
 
-        footer { background: #008040; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+.faq-item[open] .faq-icon {
+    transform: rotate(45deg);
+    color: #BC955C; /* Cambia a dorado al desplegarse */
+}
+
+.faq-answer {
+    padding: 0 20px 18px 20px;
+    color: #444444;
+    line-height: 1.6;
+}
+/* Topbar adaptada a tonos guinda */
+.topbar {
+    background-color: #4A1021; /* Guinda oscuro para la barra superior */
+    color: #ffffff;
+    font-size: 0.85rem;
+    padding: 8px 0;
+    border-bottom: 2px solid #BC955C; /* Detalle/Acento dorado institucional */
+}
+
+.topbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.topbar-info, .topbar-hours {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.topbar-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.topbar-item a:hover {
+    color: #BC955C; /* Transición a dorado al pasar el cursor */
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .topbar-container {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
     
+    .topbar-info {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .topbar-hours {
+        display: none;
+    }
+}
+/* Botón Flotante para FAQ (Izquierda) */
+.btn-faq-flotante {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    right: auto;
+    background-color: #691C32;
+    color: #ffffff;
+    border: 2px solid #BC955C;
+    border-radius: 30px;
+    padding: 10px 18px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    z-index: 9999;
+    
+    /* Transición suave para ocultar/mostrar */
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+}
+
+/* Clase dinámica que oculta el botón */
+.btn-faq-flotante.oculto {
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px); /* Efecto de bajada al desaparecer */
+    pointer-events: none;
+}
+
+.btn-faq-flotante:hover {
+    background-color: #4A1021;
+}
+
+/* Adaptación a dispositivos móviles */
+@media (max-width: 768px) {
+    .btn-faq-flotante {
+        padding: 10px;
+        border-radius: 50%;
+        bottom: 15px;
+        left: 15px;
+    }
+
+    .faq-texto-flotante {
+        display: none;
+    }
+}
+/* ==========================================================
+   SECCIÓN SOMOS CECYTEM Y PIZARRÓN INFORMATIVO
+   ========================================================== */
+.somos-section {
+    background-color: #fcf9f9;
+}
+
+/* Grilla de Identidad (Misión / Visión) */
+.identidad-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.identidad-card {
+    background: #ffffff;
+    border: 1px solid #e2d7d9;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+}
+
+.identidad-icon {
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+}
+
+.identidad-card h3 {
+    color: #691C32;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
+}
+
+.identidad-card p {
+    color: #555555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Contenedor del Pizarrón Informativo */
+.pizarron-contenedor {
+    background: #ffffff;
+    border: 1px solid #e2d7d9;
+    border-left: 5px solid #BC955C; /* Detalle dorado */
+    border-radius: 8px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 12px rgba(105, 28, 50, 0.06);
+}
+
+.pizarron-titulo {
+    color: #4A1021;
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pizarron-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.pizarron-nota {
+    background: #fdfbfb;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pizarron-nota:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.nota-tag {
+    align-self: flex-start;
+    font-size: 0.75rem;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.tag-plantel {
+    background-color: #691C32;
+    color: #ffffff;
+}
+
+.tag-zona {
+    background-color: #BC955C;
+    color: #ffffff;
+}
+
+.tag-general {
+    background-color: #4A1021;
+    color: #ffffff;
+}
+
+.pizarron-nota h4 {
+    font-size: 0.95rem;
+    color: #333333;
+    margin-bottom: 6px;
+}
+
+.pizarron-nota p {
+    font-size: 0.85rem;
+    color: #666666;
+    line-height: 1.4;
+    margin-bottom: 12px;
+}
+
+.nota-fecha {
+    font-size: 0.75rem;
+    color: #888888;
+    font-weight: 500;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 768px) {
+    .pizarron-contenedor {
+        padding: 15px;
+    }
+    
+    .pizarron-grid {
+        grid-template-columns: 1fr;
+    }
+}
