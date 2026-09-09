@@ -1,268 +1,1091 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta charset="UTF-8">
-    <title>Cecytem Plantel Metepec I</title>
-    <link rel="icon" type="image/png" href="imagenes/imagen7.png">
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="img/001.png">
+    <title>CECyTEM - Metepec I</title>
+    <link rel="stylesheet" href="style.css">
+    <meta property="og:title" content="CECyTEM - Metepec I">
+<meta property="og:description" content="Portal informativo oficial del CECyTEM Plantel Metepec I.">
+<meta property="og:image" content="img/001.png">
 </head>
 <body>
+<!-- BOTÓN FLOTANTE A FAQ -->
+<a href="#faq" id="btn-faq-flotante" class="btn-faq-flotante" title="Preguntas Frecuentes">
+    <span class="faq-icon-flotante">❓</span>
+    <span class="faq-texto-flotante">Dudas / FAQ</span>
+</a>
+    <!-- TOPBAR INFORMATIVA -->
+<!--  <div class="topbar">
+    <div class="container topbar-container">
+        <div class="topbar-info">
+            <span class="topbar-item">
+                📍 Av. Tecnológico s/n, Metepec, Edo. Méx.
+            </span>
+            <span class="topbar-item">
+                📞 <a href="tel:7221234567">(722) 123-4567</a>
+            </span>
+            <span class="topbar-item">
+                ✉️ <a href="mailto:metepec1@cecytem.mx">metepec1@cecytem.mx</a>
+            </span>
+        </div>
+        <div class="topbar-hours">
+            <span>🕒 Horario de atención: Lun - Vie 8:00 a 16:00 hrs</span>
+        </div>
+    </div>
+</div> -->
 
-    <header>
-        <h1>CECyTEM Plantel Metepec I</h1>
-        <p>Excelencia académica para un futuro brillante</p>
-    </header>
 
-    <nav>
-        <a href="#info-campus">Institución</a>
-        <a href="#carreras">Carreras</a>
-        <a href="#acciones">Nuevo Ingreso</a>
-        <a href="#pizarron">Informativos</a>
-        <a href="#descargas">Alumnado</a>
-
+    <!-- Menú de navegación -->
+    <nav class="navbar">
+        <div class="logo">CECyTEM Metepec I</div>
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+        <ul class="menu" id="menu">
+            <li><a href="#inicio" class="btn-inicio-modal">Inicio</a></li>
+            <li><a href="#oferta">Oferta Educativa</a></li>
+            <li><a href="#formacion-dual">Formación Dual</a></li>
+            <li><a href="#nuevo-ingreso">Nuevo Ingreso</a></li>
+            <li><a href="#alumnado">Alumnado</a></li>
+            <li><a href="#tramites">Trámites y Servicios</a></li>
+            <li><a href="#somos-cecytem">Soy Cecy</a></li> <!-- Nueva opción agregada -->
+          <!--  <li><a href="#directivos">Directivos</a></li> -->
+        </ul>
     </nav>
-
-   <!-- Sticker flotante de ayuda con imagen y texto -->
-<div id="help-sticker" onclick="toggleHelp()">
-    <img src="cecyto.png" alt="Ayuda" class="sticker-icon">
-    <span>Ayuda</span>
+    
+    
+<!-- Modal de Inicio (Aviso de Responsabilidad) -->
+<div id="modal-inicio" class="modal active">
+    <div class="modal-contenido">
+        <span class="cerrar-modal" id="cerrar-modal-inicio">&times;</span>
+        <div class="modal-header">
+            <h2>⚠️ Aviso Importante y Descargo de Responsabilidad</h2>
+        </div>
+        <div class="modal-body modal-texto">
+            <p>Este sitio web ha sido creado exclusivamente con <strong>fines educativos y de proyecto escolar</strong>.</p>
+            <div class="modal-seccion">
+                <p>Aclaramos que este portal <strong>no es un sitio oficial</strong> ni pretende suplantar la identidad del <strong>CECyTEM Plantel Metepec I</strong> ni del Gobierno del Estado de México. Todo el contenido presentado es de carácter demostrativo.</p>
+            </div>
+        </div>
+        <button class="btn-aceptar" id="btn-entendido-inicio">Aceptar y Entendido</button>
+    </div>
+</div>
 </div>
 
-<!-- Cuadro de información de contacto -->
-<div id="help-box">
-    <h3>Contacto del Plantel</h3>
-    <p>Teléfono: 722 275 39 15</p>
-    <p>Email: plantel.metepec1@cecytem.mx</p>
-    <p>Dirección: Av. Moctezuma s/n casi esq. Av. Gobernadores, Col. La Providencia, Metepec, Estado de México, C.P. 52177</p>
-</div>
+    <!-- INICIO -->
+    <header id="inicio" class="layout">
+        <div class="media-luna">
+            <div class="escudo-container">
+                <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+                <p class="numero">Plantel</p>
+                <p class="numero">Metepec I</p>
+            </div>
+        </div>
+        <div class="titulo">
+            <h1>Colegio de Estudios Científicos y Tecnológicos Del Estado de México</h1>
+        </div>
+    </header>
+        <!-- SECCIÓN DE ANUNCIOS Y NOVEDADES -->
+<section id="anuncios-novedades">
+    <h2>Anuncios y Novedades</h2>
+    <p class="seccion-sub">Mantente informado sobre los avisos más recientes del plantel.</p>
+
+    <div class="anuncios-grid">
+        <!-- Anuncio 1 -->
+        <article class="anuncio-card destacado">
+            <div class="anuncio-badge">Urgente</div>
+            <span class="anuncio-fecha">📅 02 de Septiembre, 2026</span>
+            <h3>Inicio de Registro para Becas Benito Juárez</h3>
+            <p>Se abre la convocatoria para el registro de becas del ciclo escolar 2026-B. Revisa los requisitos y entrega tu documentación en Control Escolar.</p>
+            <a href="#" class="btn-anuncio">Leer más &rarr;</a>
+        </article>
+
+        <!-- Anuncio 2 -->
+        
+
+        <!-- Anuncio 3 -->
+        <article class="anuncio-card">
+            <div class="anuncio-badge secundario">Comunidad</div>
+            <span class="anuncio-fecha">📅 15 de Agosto, 2026</span>
+            <h3>Reunión de Padres de Familia</h3>
+            <p>Se convoca a los tutores de primer semestre a la primera junta informativa en el auditorio del plantel.</p>
+            <a href="#" class="btn-anuncio">Ver Detalles &rarr;</a>
+        </article>
+        <!-- AVISO DE CIERRE DE LUGARES -->
+        <article class="anuncio-card urgente">
+            <div class="anuncio-header">
+            <span class="badge-anuncio urgente">CERRADO</span>
+            <span class="anuncio-fecha">📅 02 de Septiembre, 2026</span>
+    </div>
+    <h3>Inicio de Semestres y Cupo Lleno</h3>
+    <p>
+        Les informamos a todos los aspirantes que los semestres han iniciado formalmente y <strong>ya no hay lugares disponibles</strong> para este periodo. Les invitamos a estar atentos a la publicación de la siguiente convocatoria oficial.
+    </p>
+    <div class="anuncio-footer">
+        <span class="anuncio-nota">💡 Permanece atento a nuestras redes oficiales para el próximo ciclo.</span>
+    </div>
+</article>
+    </div>
+</section>
 
 
+    <hr>
 
+<!-- OFERTA EDUCATIVA -->
+<section id="oferta">
+    <div class="layout">
+        <div class="media-luna">
+            <div class="escudo-container">
+                <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+            </div>
+        </div>
+        <div class="titulo">
+            <h1>Oferta Educativa</h1>
+        </div>
+    </div>
 
-   <section id="info-campus">
-    <h2>Información del Plantel</h2>
-    <div class="info-container">
-        <div class="info-card">
-            <h3>Laboratorios</h3>
-            <p>Laboratorios de química y mecatrónica totalmente equipados.</p>
+    <p class="seccion-sub-oferta">
+        Conoce nuestras carreras técnicas, competencias profesionales e imágenes ilustrativas de cada especialidad.
+    </p>
+
+    <div class="oferta-grid-tarjetas">
+        
+        <!-- Carrera 1: Programación -->
+        <article class="carrera-card-oferta">
+            <img src="img/111.png" alt="Carrera de Programación" class="imagen-carrera-card">
+            <div class="carrera-card-body">
+                <h3>Técnico en Programación</h3>
+                <p>Formación enfocada en desarrollo de software, sitios web, bases de datos y aplicaciones móviles.</p>
+                
+                <details class="desplegable-carrera">
+                    <summary>📌 Código y Competencias</summary>
+                    <div class="contenido-desplegable">
+                        <p><strong>Código:</strong> TP-PROG-2026</p>
+                        <p><strong>Competencias:</strong></p>
+                        <ul>
+                            <li>Desarrolla software estructurado y orientado a objetos.</li>
+                            <li>Diseña y administra bases de datos relacionales.</li>
+                            <li>Construye aplicaciones web y móviles seguras.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <!-- Carrera 2: Mantenimiento a Motores -->
+        <article class="carrera-card-oferta">
+            <img src="img/004.png" alt="Carrera Mantenimiento a Motores de Combustión Interna" class="imagen-carrera-card">
+            <div class="carrera-card-body">
+                <h3>Mantenimiento a Motores</h3>
+                <p>Diagnóstico, mantenimiento y reparación de sistemas mecánicos y electrónicos automotrices.</p>
+                
+                <details class="desplegable-carrera">
+                    <summary>📌 Código y Competencias</summary>
+                    <div class="contenido-desplegable">
+                        <p><strong>Código:</strong> TM-MMCI-2026</p>
+                        <p><strong>Competencias:</strong></p>
+                        <ul>
+                            <li>Diagnostica y repara fallas en motores de gasolina y diésel.</li>
+                            <li>Mantiene sistemas de frenos, suspensión y dirección.</li>
+                            <li>Aplica mantenimiento a sistemas electrónicos automotrices.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <!-- Carrera 3: Mecatrónica -->
+        <article class="carrera-card-oferta">
+            <img src="img/10.png" alt="Carrera de Mecatrónica" class="imagen-carrera-card">
+            <div class="carrera-card-body">
+                <h3>Técnico en Mecatrónica</h3>
+                <p>Integración de mecánica, electrónica, programación y automatización para el control de sistemas inteligentes.</p>
+                
+                <details class="desplegable-carrera">
+                    <summary>📌 Código y Competencias</summary>
+                    <div class="contenido-desplegable">
+                        <p><strong>Código:</strong> TM-MICA-2026</p>
+                        <p><strong>Competencias:</strong></p>
+                        <ul>
+                            <li>Implementa y programa circuitos electrónicos y microcontroladores.</li>
+                            <li>Aplica mantenimiento a sistemas mecánicos, hidráulicos y neumáticos.</li>
+                            <li>Automatiza procesos mecánicos mediante controladores lógicos programables (PLC).</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+        <!-- Carrera 4: Instrumentación Industrial -->
+        <article class="carrera-card-oferta">
+            <img src="img/112.png" alt="Carrera de Instrumentación Industrial" class="imagen-carrera-card">
+            <div class="carrera-card-body">
+                <h3>Instrumentación Industrial</h3>
+                <p>Control, calibración y supervisión de instrumentos de medición y automatización en procesos industriales.</p>
+                
+                <details class="desplegable-carrera">
+                    <summary>📌 Código y Competencias</summary>
+                    <div class="contenido-desplegable">
+                        <p><strong>Código:</strong> TI-ININ-2026</p>
+                        <p><strong>Competencias:</strong></p>
+                        <ul>
+                            <li>Calibra e instala sensores y transmisores de variables industriales (presión, temperatura, flujo).</li>
+                            <li>Mantiene y configura sistemas de control automático de procesos.</li>
+                            <li>Aplica normas de seguridad e inspección técnica en plantas industriales.</li>
+                        </ul>
+                    </div>
+                </details>
+            </div>
+        </article>
+
+    </div>
+</section>
+    <hr>
+
+    <!-- FORMACIÓN DUAL -->
+    <section id="formacion-dual">
+        <div class="layout">
+            <div class="media-luna">
+                <div class="escudo-container">
+                    <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+                </div>
+            </div>
+            <div class="titulo">
+                <h1>Modelo de Formación Dual</h1>
+            </div>
         </div>
-        <div class="info-card">
-            <h3>Salas de Cómputo</h3>
-            <p>Salas con equipos modernos y acceso a internet de alta velocidad.</p>
+
+        <section id="formacion-dual">
+    <h2>Modelo de Formación Dual</h2>
+    <p class="seccion-sub">
+        Es una opción educativa en la que el estudiante vincula sus aprendizajes teóricos del aula con la práctica real directamente en las empresas, fortaleciendo sus competencias laborales.
+    </p>
+
+    <!-- Tarjetas de Beneficios -->
+    <div class="dual-cards-grid">
+        <article class="dual-card">
+            <div class="dual-icon">💼</div>
+            <h3>Experiencia Laboral Real</h3>
+            <p>Desarrolla habilidades y competencias directamente en un entorno de trabajo profesional antes de egresar.</p>
+        </article>
+
+        <article class="dual-card">
+            <div class="dual-icon">🎓</div>
+            <h3>Beca y Certificación</h3>
+            <p>Obtén apoyos económicos durante tu formación y certificaciones de competencias con valor en la industria.</p>
+        </article>
+
+        <article class="dual-card">
+            <div class="dual-icon">🚀</div>
+            <h3>Inserción Laboral Temprana</h3>
+            <p>Aumenta significativamente tus posibilidades de contratación en la empresa donde realizaste tu formación.</p>
+        </article>
+    </div>
+
+    <!-- Requisitos y Postulación -->
+    <div class="dual-info-box">
+        <div class="dual-info-content">
+            <h3>¿Quieres formar parte del programa?</h3>
+            <p>Consulta los requisitos de promedios, convocatorias de las empresas aliadas y fechas de postulación con la coordinación académica.</p>
         </div>
-        <div class="info-card">
-            <h3>Auditorio</h3>
-            <p>Espacio amplio para conferencias, seminarios y eventos académicos.</p>
+        <a href="https://cecytem.mx/deo/gui/LogIn.jsp" target="_blank" class="btn-dual">
+            📋 Ver Convocatoria Dual
+        </a>
+    </div>
+</section>
+    </section>
+
+    <hr>
+    <!-- ALUMNOS DE NUEVO INGRESO (MANTENIMIENTO) -->
+<section id="nuevo-ingreso">
+    <div class="layout">
+        <div class="media-luna">
+            <div class="escudo-container">
+                <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+            </div>
         </div>
-        <div class="info-card">
-            <h3>Bibliotecas</h3>
-            <p>Acervo digital y físico disponible para estudiantes y docentes.</p>
+        <div class="titulo">
+            <h1>Alumnos de Nuevo Ingreso</h1>
         </div>
-        <div class="info-card">
-            <h3>Alumnos</h3>
-            <p>Más de 1526 estudiantes forman parte de nuestra comunidad educativa.</p>
-        </div>
-        <div class="info-card">
-            <h3>Profesores</h3>
-            <p>Docentes altamente capacitados y comprometidos con la excelencia académica.</p>
-        </div>
-        <div class="info-card">
-            <h3>Formacion Dual</h3>
-            <p>EL estudiante podra trabajar mientras estudia (solo para alumnos de 3er semestre y posteriores)</p> 
-        </div>
-        <div class="info-card">
-            <h3>Titulacion</h3>
-            <p>El estudiente podra titularse por promedio, servicio social o seminarios educativos</p>
-        </div>
-        <div class="info-card">
-            <h3>Exclusivos</h3>
-            <p>El estudiente tiene derecho a un seguro facultativo </p>
-        </div>
-        <div class="info-card">
-            <h3>Tenemos Mas</h3>
-            <p>Cafeteria, Festivales, Conferencias y mucho mas...</p>
+    </div>
+
+    <!-- Tarjeta de Mantenimiento / Sección Inhabilitada -->
+    <div class="mantenimiento-card">
+        <div class="mantenimiento-icon">🛠️</div>
+        <span class="mantenimiento-badge">SECCIÓN TEMPORALMENTE INHABILITADA</span>
+        <h2>Proceso en Mantenimiento y Actualización</h2>
+        <p>
+            El apartado de registro, requisitos y consulta de resultados para alumnos de nuevo ingreso se encuentra en mantenimiento mientras preparamos la información de la siguiente convocatoria.
+        </p>
+        <div class="mantenimiento-nota">
+            📌 Por el momento los trámites de nuevo ingreso están suspendidos. Mantente al tanto de los canales oficiales para próximas fechas.
         </div>
     </div>
 </section>
 
-    <section id="carreras">
-        <h2>Carreras Disponibles</h2>
-        <div class="carreras-container">
-            <div class="carrera">
-                <img src="imagen3.jpg" alt="Programación">
-                <h3>Programación</h3>
-                <p>Formación en desarrollo de software, aplicaciones web y móviles.</p>
-                <p><strong>Con formacion Dual.</strong></p>
-                
-            </div>
-            <div class="carrera">
-                <img src="imagen4.jpg" alt="Mecatrónica">
-                <h3>Mecatrónica</h3>
-                <p>Integración de mecánica, electrónica y control para sistemas inteligentes.</p>
-                <p> <strong>Con Formacion Dual.</strong> </p>
-                
-            </div>
-            <div class="carrera">
-                <img src="imagen5.jpg" alt="Instrumentación">
-                <h3>Instrumentación</h3>
-                <p>Diseño y mantenimiento de sistemas de medición y control industrial.</p>
-
-                
-            </div>
-            <div class="carrera">
-                <img src="imagen6.jpg" alt="Mantenimiento Automotriz">
-                <h3>Mantenimiento Automotriz</h3>
-                <p>Diagnóstico, reparación y optimización de vehículos modernos.</p>
-                <p> <strong>Con Formacion Dual.</strong> </p>
-                
+    <!-- NUEVO INGRESO -->
+ <!--  <section id="nuevo-ingreso">
+    <div class="layout">
+        <div class="media-luna">
+            <div class="escudo-container">
+                <img src="img/002.png" alt="Escudo de la institución" class="escudo">
             </div>
         </div>
-    </section>
-
-    <section id="acciones">
-        <h2>Acciones para Estudiantes de Nuevo Ingreso</h2>
-        <div class="acciones">
-            <a href="https://ingresoms.103municipios.edugem.gob.mx/#/inicio" data-tooltip="Regístrate para ingresar a la institución. para chic@s de nuevo ingreso.">Concurso de Ingreso</a>
-            <a href="documentos/convocatoria2026.pdf" target="_blank" data-tooltip="Consulta la convocatoria vigente. Para Chic@s de nuevo ingreso.">Consultar Convocatoria</a>
-            <a href="becaexcelencia.html" data-tooltip="Solicita becas de excelencia académica">Becas de Excelencia</a>
-            <a href="https://cecytem.mx/deo/gui/LogIn.jsp" class="portal-estudiante" data-tooltip="Accede al portal exclusivo para estudiantes">Portal del Estudiante</a>
-            <a href="https://www.becabenitojuarez.gob.mx/" data-tooltip="Solicita tu beca benito Juarez">Beca Benito Juarez</a>
+        <div class="titulo">
+            <h1>Alumnos de Nuevo Ingreso</h1>
         </div>
-    </section>
+    </div>
 
-    <section id="pizarron">
-    <h2>Pizarrón Informativo</h2>
-    <div class="news-container">
-        <div class="news-card">
-            <h3>Que No se te pase ⌛</h3>
-            <p>Nuestro semestres ya iniciaron... si estas proximo a ingresar a la media superior consulta la canvocatoria de ingreso 2026
-                en la seccion.<strong>Descubre Mas</strong>
+    <div id="requisitos-inscripcion">
+    <h2>Requisitos de Inscripción</h2>
+    <p class="seccion-sub">Asegúrate de contar con los siguientes documentos y pasos para completar tu registro:</p>
+
+    <div class="requisitos-cards-grid">
+        <article class="requisito-card">
+            <div class="requisito-step">1</div>
+            <div class="requisito-icon">🎓</div>
+            <h3>Certificado de Secundaria</h3>
+            <p>Certificado oficial de Nivel Básico acreditado.</p>
+        </article>
+
+        <article class="requisito-card">
+            <div class="requisito-step">2</div>
+            <div class="requisito-icon">📋</div>
+            <h3>Registro e Obtenición de Folio</h3>
+            <p>Comprobante de registro emitido por la plataforma INGRESOMS.</p>
+        </article>
+
+        <article class="requisito-card">
+            <div class="requisito-step">3</div>
+            <div class="requisito-icon">✅</div>
+            <h3>Asignación a la Institución</h3>
+            <p>Acreditar la asignación oficial a este subsistema educativo.</p>
+        </article>
+
+        <article class="requisito-card">
+            <div class="requisito-step">4</div>
+            <div class="requisito-icon">📜</div>
+            <h3>Convocatoria</h3>
+            <p>Haber acreditado todos los puntos mencionados en la convocatoria vigente.</p>
+        </article>
+    </div>
+
+    Advertencia Importante 
+    <div class="alerta-asignacion">
+        <div class="alerta-icon">⚠️</div>
+        <div class="alerta-texto">
+            <strong>RECUERDA:</strong> La asignación a esta institución será aleatoria y <strong>no asegura ser asignado a este plantel en específico</strong>.
+        </div>
+    </div>
+</div>
+
+    <div id="documentacion-nuevo-ingreso">
+    <h2>¿Fuiste Asignado a este Plantel?</h2>
+    <p class="seccion-sub">Consulta las listas oficiales y mantente atento a los siguientes pasos del proceso:</p>
+
+    <div class="asignacion-cards-grid">
+        Tarjeta de Listado Oficial 
+        <article class="asignacion-card destacado">
+            <div class="asignacion-icon">📄</div>
+            <h3>Listado de Aspirantes</h3>
+            <p>Consulta la lista oficial de alumnos asignados y verifica el turno correspondiente.</p>
+            <a href="docs/formato_inscripcion.pdf" download class="btn-asignacion">
+                📥 Descargar Turnos (PDF)
+            </a>
+        </article>
+
+        <!-- Tarjeta de Indicaciones Pendientes 
+        <article class="asignacion-card">
+            <div class="asignacion-icon">⏳</div>
+            <h3>Continuación del Proceso</h3>
+            <p>La información restante para completar tu expediente y formalizar la inscripción se publicará a la brevedad.</p>
+            <span class="badge-estatus">En actualización</span>
+        </article>
+    </div>
+</div>
+
+    <!-- SECCIÓN DE PÓSTERES E IMÁGENES INFORMATIVAS 
+    <div id="posteres-nuevo-ingreso" class="posteres-container">
+        <h2>Avisos y Pósteres Informativos</h2>
+        <p>A continuación se muestran los detalles y avisos para el proceso de continuación e inscripción:</p>
+        
+        <div class="grid-posteres">
+            <div class="poster-card">
+                <img src="img/302.jpg" alt="Información de Continuación de Nuevo Ingreso" class="imagen-poster">
+                <p class="pie-poster">Continuación del Proceso de Inscripción</p>
+            </div>
+            
+            <div class="poster-card">
+                <img src="img/301.jpg" alt="Convocatoria y Fechas Importantes" class="imagen-poster">
+                <p class="pie-poster">Espera indicaciones oficiales.</p>
+            </div>
+        </div>
+    </div>
+</section> -->
+
+    <hr>
+
+    <!-- ALUMNADO -->
+<section id="alumnado">
+    <div class="layout">
+        <div class="media-luna">
+            <div class="escudo-container">
+                <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+            </div>
+        </div>
+        <div class="titulo">
+            <h1>Alumnado</h1>
+        </div>
+    </div>
+<div id="servicios-alumnos">
+    <h2>Servicios para Alumnos</h2>
+    <p class="seccion-sub">Espacios y apoyos disponibles para tu desarrollo académico e integral:</p>
+
+    <div class="servicios-cards-grid">
+        <article class="servicio-card">
+            <div class="servicio-icon">📖</div>
+            <h3>Biblioteca Escolar</h3>
+            <p>Acceso a acervo bibliográfico físico, áreas de estudio silencioso y préstamo de libros.</p>
+        </article>
+
+        <article class="servicio-card">
+            <div class="servicio-icon">💻</div>
+            <h3>Laboratorios de Cómputo y Ciencias</h3>
+            <p>Equipamiento tecnológico y laboratorios especializados para prácticas de tu carrera.</p>
+        </article>
+
+        <article class="servicio-card">
+            <div class="servicio-icon">⚽</div>
+            <h3>Actividades Deportivas y Culturales</h3>
+            <p>Talleres, torneos e integración en disciplinas artísticas y físicas dentro del plantel.</p>
+        </article>
+
+        <article class="servicio-card">
+            <div class="servicio-icon">🧠</div>
+            <h3>Orientación Académica y Psicológica</h3>
+            <p>Acompañamiento personal, tutorías y asesoría para tu bienestar y rendimiento escolar.</p>
+        </article>
+    </div>
+</div>
+
+    <div id="reglamentos">
+    <h2>Datos y Consultas</h2>
+    <p>Accede a las plataformas oficiales:</p>
+    <div class="alumnos-botones-container">
+        <a href="https://cecytem.mx/deo/gui/LogIn.jsp" target="_blank" class="btn-alumno">
+            📊 Consulta de Calificaciones
+        </a>
+        <a href="https://cecytem.mx/deo/gui/LogIn.jsp" target="_blank" class="btn-alumno">
+            📅 Consulta tu Horario
+        </a>
+        <a href="https://cecytem.mx/deo/gui/LogIn.jsp" target="_blank" class="btn-alumno">
+            📚 Biblioteca Digital
+        </a>
+    </div>
+</div>
+
+<div id="actividades">
+    <h2>Actividades Extracurriculares</h2>
+    <p class="seccion-sub">Complementa tu formación participando en nuestras disciplinas físicas, artísticas y científicas:</p>
+
+    <div class="actividades-cards-grid">
+        <article class="actividad-card">
+            <div class="actividad-icon">⚽</div>
+            <h3>Deportes</h3>
+            <p>Fútbol, básquetbol y voleibol en torneos internos e intercolegiales.</p>
+        </article>
+
+        <article class="actividad-card">
+            <div class="actividad-icon">🎵</div>
+            <h3>Música y Coro</h3>
+            <p>Desarrollo de talento vocal e instrumental para eventos institucionales.</p>
+        </article>
+
+        <article class="actividad-card">
+            <div class="actividad-icon">🔬</div>
+            <h3>Club de Ciencias y Tecnología</h3>
+            <p>Proyectos de innovación, experimentos y participación en ferias científicas.</p>
+        </article>
+
+        <article class="actividad-card">
+            <div class="actividad-icon">🎭</div>
+            <h3>Arte y Teatro</h3>
+            <p>Talleres de expresión corporal, actuación y artes plásticas.</p>
+        </article>
+    </div>
+</div>
+
+    <!-- NUEVA SECCIÓN DE AVISOS Y PÓSTERES PARA ALUMNADO -->
+   <!-- <div id="posteres-alumnado" class="posteres-container">
+        <h2>Avisos y Guías Informativas</h2>
+        <p>Haz clic en cualquier imagen para ver los detalles en pantalla completa:</p>
+        
+        <div class="grid-posteres">
+            <div class="poster-card">
+                <img src="img/reinscripciones.jpeg" alt="Información sobre Reinscripciones" class="imagen-poster">
+                <p class="pie-poster">Proceso de Reinscripción</p>
+            </div>
+            
+            <div class="poster-card">
+                <img src="img/horarios.jpeg" alt="Consulta de Horarios por Grupo" class="imagen-poster">
+                <p class="pie-poster">Consulta de Horarios</p>
+            </div>
+
+            <div class="poster-card">
+                <img src="img/formato_pago.jpeg" alt="Descarga y llenado de Formato de Pago" class="imagen-poster">
+                <p class="pie-poster">Formatos de Pago</p>
+            </div>
+        </div>
+    </div> -->
+</section>
+
+    <!-- TRÁMITES Y SERVICIOS -->
+    <section id="tramites">
+        <div class="layout">
+            <div class="media-luna">
+                <div class="escudo-container">
+                    <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+                </div>
+            </div>
+            <div class="titulo">
+                <h1>Trámites y Servicios</h1>
+            </div>
+        </div>
+
+        <!-- TRÁMITES DISPONIBLES -->
+<div id="tramites-disponibles">
+    <h2>Trámites Disponibles</h2>
+    <p class="seccion-sub">Selecciona o consulta los trámites académicos que puedes realizar:</p>
+    
+    <div class="tramites-cards-grid">
+        <article class="tramite-card">
+            <div class="tramite-icon">📄</div>
+            <h3>Constancia de Reinscripción</h3>
+            <p>Solicita tu comprobante oficial de estudios para trámites externos o familiares.</p>
+        </article>
+
+        <article class="tramite-card">
+            <div class="tramite-icon">📊</div>
+            <h3>Historial Académico</h3>
+            <p>Consulta el desglose completo de tus calificaciones y materias cursadas.</p>
+        </article>
+
+        <article class="tramite-card">
+            <div class="tramite-icon">📑</div>
+            <h3>Boletas por Semestre</h3>
+            <p>Obtén el reporte de calificaciones correspondiente al ciclo escolar actual.</p>
+        </article>
+
+        <article class="tramite-card">
+            <div class="tramite-icon">🏛️</div>
+            <h3>Plataforma DEO CECyTEM</h3>
+            <p>Acceso directo al sistema escolar institucional para trámites en línea.</p>
+            <a href="https://cecytem.mx/deo/gui/LogIn.jsp" target="_blank" class="btn-tramite-card">Acceder al DEO &rarr;</a>
+        </article>
+    </div>
+    <!-- TRÁMITES Y SERVICIOS -->
+<section id="tramites">
+   
+    <!-- AVISO DE PLATAFORMA HABILITADA -->
+    <div class="aviso-servicio-social">
+        <div class="aviso-header">
+            <span class="badge-estado habilitado">🟢 Plataforma Activa</span>
+            <h2>Servicio Social y Prácticas Profesionales</h2>
+        </div>
+        <div class="aviso-body">
+            <p>
+                Se informa a toda la comunidad estudiantil que la <strong>Plataforma de Registro y Seguimiento de Servicio Social y Prácticas Profesionales</strong> se encuentra oficialmente <strong>habilitada</strong> para el presente periodo.
             </p>
-        </div>
-        <div class="news-card">
-            <h3>Costos e Inscripciones 💵</h3>
-            <p>Nuestras colegiaturas son muy accesibles para que nuestros estudiantes no pierdan su educacion mediasuperior. Podras pagar hasta <strong>$0 de inscripcion con tu beca de exelencia</strong>.</p>
-        </div>
-        <div class="news-card">
-            <h3>Se un chavo CECy</h3>
-            <p>Forma parte de nuestra comunidad estudiantil. Somos unos de los <strong>planteles más calificados para la educacion mediasuperior
-            del Estado.</strong>  No te quedes fuera. Comiensa a escribir tu futuro ahora.</p>
-        </div>
-        <div class="news-card">
-            <h3>Muy Pronto... 😯</h3>
-            <p>El Plantel dispondra informacion para chavos de nuevo ingreso. <strong>Consulta nuetros canales oficiales.</strong></p>
-        </div>
-        <div class="news-card">
-            <h3>Muy Importante.</h3>
-            <p>Recuerda que... si realizaste tu inscripcion <strong>Nuevo Ingreso</strong>, dependera de tus resultados del examen. <strong>Tenemos cupo limitado</strong> Exito.</p>
+            <p>
+                Si cumples con los requisitos y créditos necesarios, ya puedes iniciar tu proceso de alta, subir tus documentos y descargar tus cartas de presentación.
+            </p>
+            <div class="aviso-acciones">
+                <a  id="btn-abrir-ss-modal" class="btn-tramite-destacado">
+                    📋 Ver Requisitos y Documentación
+                </a>
+                <a href="https://cecytem.mx/deo/gui/LogIn.jsp" target="_blank" class="btn-tramite-externo">
+                    🚀 Ir al Portal de Servicio Social &rarr;
+                </a>
+            </div>
         </div>
     </div>
+
+    
 </section>
 
-<section id="descargas">
-    <h2>Descargas Importantes</h2>
-    <h3>Upss... lamentamos lo sucedido consulta la informacion que te proporcionan tus orientadores educativos.</h3>
-    <p>Espera la info muy pronto... 🚧🚧</p>
-    <!--<div class="download-container">
-        <button class="download-btn" onclick="openLogin('formatos/formato-inscripcion.pdf')">📄 Formato de Inscripción</button>
-        <button class="download-btn" onclick="openLogin('formatos/boleta-calificaciones.pdf')">📊 Boleta de Calificaciones</button>
-        <button class="download-btn" onclick="openLogin('formatos/baucher-pago.pdf')">💰 Baucher de Pago</button>
-        <button class="download-btn" onclick="openLogin('formatos/reglamento.pdf')">📘 Reglamento Interno</button>
+    <div class="aviso-ventanilla">
+        <span>💡 <strong>¿Requieres otro trámite?</strong> Acude directamente a la ventanilla de Control Escolar o Vinculación del plantel.</span>
     </div>
-</section>
-
-<div id="loginModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeLogin()">&times;</span>
-    <h3>Iniciar Sesión</h3>
-    <form id="loginForm" method="POST" action="descargar.php">
-      <label>Número de Control:</label>
-      <input type="text" name="control" required>
-      
-      <label>Contraseña:</label>
-      <input type="text" name="curp" required>
-      
-      
-      <input type="hidden" name="tipo" id="tipoDocumento">
-      
-      <button type="submit">Iniciar Sesión y Descargar</button>
-    </form>
-  </div>
 </div>
 
+<!-- SERVICIOS PARA LA COMUNIDAD ESCOLAR -->
+<div id="servicios-comunidad" style="margin-top: 40px;">
+    <h2>Servicios para la Comunidad Escolar</h2>
+    <div class="tramites-cards-grid">
+        <article class="tramite-card">
+            <div class="tramite-icon">🎓</div>
+            <h3>Beca Benito Juárez</h3>
+            <p>Inscripción y seguimiento del programa de becas para educación media superior.</p>
+        </article>
 
- Ventana Modal de Login
-<div id="loginModal" class="modal">
-    <div class="modal-content">
-        <span class="close" onclick="closeLogin()">&times;</span>
-        <h3>Iniciar Sesión</h3>
-        <h3>DEO CECyTEM</h3>
-        <form id="loginForm" method="POST" action="descarga.php">
-            <label for="control">Número de Control:</label>
-            <input type="text" name="control" required>
-            <label for="curp">CURP:</label>
-            <input type="text" name="curp" required>
-            <input type="hidden" name="tipo" id="tipoDocumento">
-            <button type="submit">Iniciar Sesión</button>
-        </form>
+        <article class="tramite-card">
+            <div class="tramite-icon">🏥</div>
+            <h3>Seguro Facultativo (IMSS)</h3>
+            <p>Alta y asignación del Número de Seguridad Social para estudiantes.</p>
+        </article>
 
+        <article class="tramite-card">
+            <div class="tramite-icon">✉️</div>
+            <h3>Correo Institucional</h3>
+            <p>Gestión de cuenta de correo oficial con dominio <code>@soycecytem.mx</code>.</p>
+        </article>
+
+        <article class="tramite-card">
+            <div class="tramite-icon">📝</div>
+            <h3>Proceso INGRESOMS</h3>
+            <p>Información para el proceso de asignación a la educación media superior.</p>
+        </article>
     </div>
-</div>-->
+</div>
 
+        <div id="orientacion">
+    <h2>Páginas de Orientación</h2>
+    <p>Enlaces directos a portales e información de trámites:</p>
+    
+    <div class="tramites-botones-container">
+        <a href="https://www.becabenitojuarez.gob.mx/" target="_blank" class="btn-tramite">
+            🎓 Beca Benito Juárez
+        </a>
+        <a href="https://www.imss.gob.mx/tramites/imss02008" target="_blank" class="btn-tramite">
+            🏥 Asignación / Consulta NSS (IMSS)
+        </a>
+        <a href="https://accounts.google.com/v3/signin/identifier?continue=https%3A%2F%2Fmail.google.com%2Fmail%2F&dsh=S-1340432271%3A1780429354774125&hd=soycecytem.mx&sacu=1&service=mail&flowName=GlifWebSignIn&flowEntry=ServiceLogin&ifkv=AWa2PashqXIIJM-gHwIfIVdcxIwS5MuP0BI5jmV6fcJ_QPUvuJN2sg-aUIZ4nFRSgQ8aV2QzWbsE2w" target="_blank" class="btn-tramite">
+            ✉️ Correo Institucional (@soycecytem.mx)
+        </a>
+        <a href="https://ingresoms.103municipios.edugem.gob.mx/#/inicio" target="_blank" class="btn-tramite">
+            📝 Registro INGRESOMS
+        </a>
+        <span class="btn-tramite inhabilitado" title="Trámite no disponible por el momento">
+            🚫 Formato de Pago (Inhabilitado)
+        </span>
+        <span class="btn-tramite inhabilitado" title="Trámite no disponible por el momento">
+            🚫 Becas de Excelencia (Inhabilitado)
+        </span>
+    </div>
+</div>
+    </section>
 
+    <hr>
+    <!-- MASCOTA INSTITUCIONAL -->
+<section id="mascota">
+    <div class="layout">
+        <div class="media-luna">
+            <div class="escudo-container">
+                <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+            </div>
+        </div>
+        <div class="titulo">
+            <h1>Nuestra Mascota Institucional</h1>
+        </div>
+    </div>
 
-    <footer>
-        <p>&copy; Colegio de Estudios Cientificos Y Tecnologicos del Estado De Mexico - Todos los derechos reservados</p>
-    </footer>
+<div class="mascota-card-container">
+    <div class="mascota-card">
+        <!-- Contenedor visual de la imagen -->
+        <div class="mascota-imagen-wrapper">
+            <div class="mascota-bg-glow"></div>
+            <img src="img/cecyto.jpg" alt="Mascota Institucional Cecyto el Leopardo" class="mascota-img">
+            <span class="mascota-tag">Mascota Oficial</span>
+        </div>
 
+        <!-- Información -->
+        <div class="mascota-info">
+            <span class="badge-mascota">Orgullo CECyTEM</span>
+            <h2>Cecyto el Leopardo</h2>
+            <p>
+                Cecyto representa la fuerza, velocidad, agilidad y determinación de la comunidad estudiantil del CECyTEM. Simboliza el espíritu competitivo y el liderazgo de nuestros alumnos en las áreas científicas, tecnológicas y deportivas.
+            </p>
+            <div class="mascota-valores">
+                <span class="valor-pill">🐆 Fuerza</span>
+                <span class="valor-pill">⚡ Agilidad</span>
+                <span class="valor-pill">🏆 Liderazgo</span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>
+
+<hr>
+
+<!-- SECCIÓN SOMOS CECYTEM -->
+<section id="somos-cecytem" class="somos-section section-padding">
+    <div class="container">
+        <h2 class="section-title">Somos CECyTEM</h2>
+        <p class="section-subtitle">Conoce nuestra identidad, valores y las novedades de nuestro plantel y zona académica.</p>
+
+        <!-- BLOQUE 1: IDENTIDAD INSTITUCIONAL -->
+        <div class="identidad-grid">
+            <div class="identidad-card">
+                <div class="identidad-icon">🎓</div>
+                <h3>¿Quiénes Somos?</h3>
+                <p>Somos una institución de educación media superior comprometida con la formación integral de técnicos profesionales preparados para el sector productivo y la universidad.</p>
+            </div>
+
+            <div class="identidad-card">
+                <div class="identidad-icon">🎯</div>
+                <h3>Misión</h3>
+                <p>Impartir educación bivalente de calidad que impulse el desarrollo de habilidades tecnológicas, científicas y humanas en la juventud del Estado de México.</p>
+            </div>
+
+            <div class="identidad-card">
+                <div class="identidad-icon">💡</div>
+                <h3>Visión</h3>
+                <p>Ser el subsistema educativo líder y referente en formación tecnológica regional, destacado por la excelencia académica y la innovación.</p>
+            </div>
+        </div>
+
+        <!-- BLOQUE 2: PIZARRÓN INFORMATIVO (BOLETÍN Y ZONA) -->
+        <div class="pizarron-contenedor">
+            <h3 class="pizarron-titulo">📌 Pizarrón de Información y Zona Escolar</h3>
+            
+            <div class="pizarron-grid">
+                <article class="pizarron-nota nota-plantel">
+                    <span class="nota-tag tag-plantel">Plantel Metepec I</span>
+                    <h4>Aviso de suspensión de labores</h4>
+                    <p>Se comunica a la comunidad estudiantil que habrá suspensión de labores el próximo 16 de septiembre de 2026.</p>
+                    <span class="nota-fecha">📅 16 de Septiembre, 2026</span>
+                </article>
+
+                <article class="pizarron-nota nota-zona">
+                    <span class="nota-tag tag-zona">Noticias de la Zona</span>
+                    <h4>Encuentro Intercolegial Cultural y Deportivo</h4>
+                    <p>Felicitamos a los alumnos seleccionados para representar al Plantel Metepec I en la etapa regional de la zona.</p>
+                    <span class="nota-fecha">📅 05 de Septiembre, 2026</span>
+                </article>
+
+                <article class="pizarron-nota nota-general">
+                    <span class="nota-tag tag-general">Convocatoria</span>
+                    <h4>Becas de Formación Dual y Excelencia</h4>
+                    <p>Apertura del registro para aspirantes al programa de Formación Dual. Acude a la coordinación de vinculación.</p>
+                    <span class="nota-fecha">📅 01 de Septiembre, 2026</span>
+                </article>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- NUESTROS DIRECTIVOS -->
+<section id="directivos">
+    <div class="layout">
+        <div class="media-luna">
+            <div class="escudo-container">
+                <img src="img/001.png" alt="Escudo de la institución" class="escudo">
+            </div>
+        </div>
+        <div class="titulo">
+            <h1>Nuestros Directivos</h1>
+        </div>
+    </div>
+
+    <div class="directivos-cards-grid">
+        <article class="directivo-card">
+            <div class="directivo-foto-wrapper">
+                <img src="img/directivo1.jpg" alt="Director General CECyTEM" class="directivo-img">
+            </div>
+            <div class="directivo-info">
+                <h3>Director General</h3>
+                <span class="directivo-cargo">CECyTEM</span>
+            </div>
+        </article>
+
+        <article class="directivo-card">
+            <div class="directivo-foto-wrapper">
+                <img src="img/directivo2.jpg" alt="Secretario de la SEP" class="directivo-img">
+            </div>
+            <div class="directivo-info">
+                <h3>Secretario de la SEP</h3>
+                <span class="directivo-cargo">Secretaría de Educación Pública</span>
+            </div>
+        </article>
+
+        <article class="directivo-card destacado">
+            <div class="directivo-foto-wrapper">
+                <img src="img/directivo3.jpg" alt="Director del Plantel" class="directivo-img">
+            </div>
+            <div class="directivo-info">
+                <h3>Mtro. Juan Gabriel Zetina Espinosa</h3>
+                <span class="directivo-cargo">Director del Plantel Metepec I</span>
+            </div>
+        </article>
+
+        <article class="directivo-card">
+            <div class="directivo-foto-wrapper">
+                <img src="img/directivo4.jpg" alt="Jefa de Vinculación" class="directivo-img">
+            </div>
+            <div class="directivo-info">
+                <h3>Jefa de Vinculación</h3>
+                <span class="directivo-cargo">Departamento de Vinculación</span>
+            </div>
+        </article>
+    </div>
+</section>
+<!-- SECCIÓN PREGUNTAS FRECUENTES -->
+<section id="faq" class="faq-section">
+    <div class="container">
+        <h2 class="section-title">Preguntas Frecuentes</h2>
+        <p class="section-subtitle">Resuelve tus dudas más comunes sobre procesos académicos y administrativos.</p>
+
+        <div class="faq-grid">
+           <!--  <details class="faq-item">
+                <summary class="faq-question">
+                    <span>¿Cuáles son los requisitos para la reinscripción?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>Debes presentar tu historial académico actualizado, no tener adeudos de asignaturas o biblioteca y realizar el pago correspondiente en la cuenta oficial del plantel.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span>¿Cómo puedo solicitar una constancia de estudios?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>La solicitud se realiza en la ventanilla de Control Escolar en un horario de 8:00 a 15:00 hrs, o a través del módulo de atención en línea presentando tu credencial institucional.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span>¿Dónde puedo consultar el calendario escolar vigente?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>El calendario escolar oficial está disponible en la sección de Avisos de este portal y en las redes sociales oficiales del plantel.</p>
+                </div>
+            </details>
+
+            <details class="faq-item">
+                <summary class="faq-question">
+                    <span>¿Qué hago si olvidé mis accesos a la plataforma escolar?</span>
+                    <span class="faq-icon">+</span>
+                </summary>
+                <div class="faq-answer">
+                    <p>Debes acudir con el coordinador de informática del plantel o enviar un correo a soporte con tu matrícula, nombre completo y CURP.</p>
+                </div>
+            </details> -->
+            <details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Qué carreras técnicas tiene el CECyTEM Metepec I?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p>El plantel ofrece las carreras técnicas de <strong>Programación, Mecatrónica, Instrumentación Industrial y Mantenimiento Automotriz</strong>. Puedes consultar el plan de estudios completo en la sección de Oferta Educativa.</p>
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Si estudio en el CECyTEM puedo tener la Beca Benito Juárez?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p><strong>Sí.</strong> Al ser estudiante inscrito en una institución pública de educación media superior, tienes derecho a solicitar la Beca Benito Juárez durante los periodos de registro de la convocatoria vigente.</p>
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Tengo que hacer examen para quedar asignado en el CECyTEM Metepec I?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p><strong>No.</strong> La asignación de lugares para educación media superior en el Estado de México se realiza a través del proceso oficial de <strong>INGRESOMS</strong>, conforme a los registros y requisitos correspondientes.</p>
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Cuándo sale la convocatoria de nuevo ingreso para el CECyTEM Metepec I?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p>La convocatoria para el proceso de ingreso a la educación media superior se publica habitualmente durante la <strong>segunda semana de marzo</strong>. Te recomendamos estar al pendiente de las fechas actualizadas en las convocatorias oficiales.</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Cuánto cuestan las cuotas de inscripción y reinscripción?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p>El costo de la cuota escolar es de un aproximado de <strong>$1,000 a $1,200 pesos por semestre</strong> (sujeto a actualización oficial al momento de cada convocatoria).</p>
+    </div>
+</details>
+
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Cómo y dónde obtengo mi formato de pago?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p>La entrega del formato depende de tu estatus académico:</p>
+         <ul>
+             <li><strong>Nuevo Ingreso:</strong> Se te entregará de forma presencial directamente al completar tu trámite de inscripción en las instalaciones del plantel.</li>
+             <li><strong>Reinscripción (semestres avanzados):</strong> La referencia o formato de pago será enviada directamente a tu <strong>correo institucional (@soycecytem.mx)</strong> antes de iniciar el periodo escolar.</li>
+         </ul>
+    </div>
+</details>
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Qué papeles y documentos ocupo para la inscripción de nuevo ingreso al CECyTEM Metepec I?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p>Para completar tu expediente de inscripción de nuevo ingreso, habitualmente deberás entregar original y copias de los siguientes documentos:</p>
+         <ul>
+             <li><strong>Comprobante de asignación oficial</strong> (hoja del resultado INGRESOMS).</li>
+             <li><strong>Certificado de Secundaria</strong> (original y copia, o constancia de estudios con promedio si está en trámite).</li>
+             <li><strong>Acta de Nacimiento</strong> (reciente y en buen estado).</li>
+             <li><strong>CURP</strong> (formato actualizado impreso de la plataforma oficial).</li>
+             <li><strong>Comprobante de domicilio</strong> (recibo de luz, agua o predial no mayor a 3 meses).</li>
+             <li><strong>Fotografías tamaño infantil</strong> (recientes, de frente y en papel mate).</li>
+             <li><strong>Comprobante del pago de la cuota escolar</strong> de inscripción.</li>
+             <li><strong>Número de Seguridad Social (NSS)</strong> impreso para el alta del Seguro Facultativo (IMSS).</li>
+         </ul>
+         <p><em>*Nota: Los requisitos específicos y el número exacto de copias se confirmarán en la hoja de cotejo de la convocatoria oficial vigente.</em></p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>Si quedé asignado en el CECyTEM Metepec II, ¿puedo cambiarme al CECyTEM Metepec I?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p><strong>No es posible realizar cambios directos de plantel.</strong> La asignación de cada aspirante está determinada por el cupo máximo de las instalaciones y la alta demanda de las carreras técnicas solicitadas en el plantel Metepec I.</p>
+         <p>Si deseas ingresar a este plantel, deberás esperar a la publicación de la siguiente convocatoria oficial para realizar nuevamente tu proceso de registro y solicitar un lugar según la disponibilidad del siguiente periodo.</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>Olvidé mi folio de INGRESOMS, ¿cómo puedo recuperarlo?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p>Para recuperar tu folio, debes ingresar directamente a la <strong>plataforma oficial de INGRESOMS</strong> y seguir el procedimiento de recuperación indicando tu CURP o el correo electrónico que registraste al inicio del proceso.</p>
+         <p><em>*Nota: El plantel no cuenta con acceso a las claves o folios del sistema central de asignación, por lo que el trámite debe hacerse exclusivamente desde el portal oficial de INGRESOMS.</em></p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>Se me pasó la fecha de registro, ¿puedo inscribirme después de la fecha establecida?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p><strong>No.</strong> Las fechas del calendario escolar y de la convocatoria son <strong>inapelables y estrictas</strong>. Una vez cerrado el sistema de registro o el periodo de recepción de documentos en ventanilla, no es posible tramitar registros extemporáneos.</p>
+         <p>Te recomendamos revisar detalladamente los plazos fijados en las bases de la convocatoria vigente para evitar contratiempos.</p>
+    </div>
+</details>
+<details class="faq-item">
+    <summary class="faq-question">
+        <span>¿Puedo realizar el pago de mi formato antes de la fecha límite?</span>
+        <span class="faq-icon">+</span>
+    </summary>
+    <div class="faq-answer">
+         <p><strong>Sí, es posible bajo autorización.</strong> Para solicitar una prórroga, debes acudir directamente con tu <strong>orientador educativo</strong> y exponer las razones de la demora.</p>
+         <p>Ten en cuenta que la fecha autorizada <strong>no debe sobrepasar el límite de timbrado</strong> o vigencia del formato de pago para que la institución pueda validar tu trámite.</p>
+    </div>
+</details>
+        </div>
+    </div>
+</section>
+    <!-- Botón flotante para regresar al inicio -->
+<a href="#inicio" id="btn-ir-arriba" title="Volver al inicio">&#8593;</a>
+<!-- Modal para ampliar imagen -->
+<div id="modal-visor" class="modal-visor">
+    <span class="cerrar-modal" id="cerrar-modal">&times;</span>
+    <img class="imagen-modal" id="imagen-ampliada" alt="Vista ampliada">
+</div>
+
+    <script src="script.js"></script>
+    <!-- FOOTER INSTITUCIONAL EDOMEX -->
+<footer class="footer-edomex">
+    <!-- Colibrí flotante sobresaliendo del footer -->
+    <div class="colibri-container">
+        <img src="img/colibri.png" alt="Colibrí Edomex" class="colibri-img">
+    </div>
+
+    <div class="footer-container">
+        <div class="footer-info">
+            <div class="footer-col">
+                <h3>CECyTEM Plantel Metepec I</h3>
+                <p>Colegio de Estudios Científicos y Tecnológicos del Estado de México</p>
+                <p><strong>CCT:</strong> 15ETC0024S</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Contacto</h3>
+                <p>📍 Av. Tecnológico s/n, Metepec, Estado de México</p>
+                <p>📞 Teléfono: (722) 123-4567</p>
+                <p>✉️ Correo: metepec1@cecytem.mx</p>
+            </div>
+
+            <div class="footer-col">
+                <h3>Gobierno del Estado de México</h3>
+                <p><em>El poder de servir</em></p>
+                <ul>
+                    <li><a href="https://edomex.gob.mx/" target="_blank">Portal del Gobierno del EdoMex</a></li>
+                    <li><a href="https://cecytem.edomex.gob.mx/" target="_blank">Portal Central CECyTEM</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-derechos">
+            <p>&copy; 2026 Gobierno del Estado de México | CECyTEM Metepec I. Todos los derechos reservados.</p>
+        </div>
+    </div>
+</footer>
+<script>
+    document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+                targetElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function () {
+        const btnFaq = document.getElementById("btn-faq-flotante");
+        const faqSection = document.getElementById("faq");
+
+        if (btnFaq && faqSection) {
+            const observer = new IntersectionObserver(
+                (entries) => {
+                    entries.forEach((entry) => {
+                        if (entry.isIntersecting) {
+                            // Oculta el botón cuando la sección FAQ es visible
+                            btnFaq.classList.add("oculto");
+                        } else {
+                            // Muestra el botón en cualquier otro lugar
+                            btnFaq.classList.remove("oculto");
+                        }
+                    });
+                },
+                { threshold: 0.2 } // Se activa cuando al menos el 20% de la sección es visible
+            );
+
+            observer.observe(faqSection);
+        }
+    });
+</script>
 </body>
 </html>
-<script>
-function mostrarInfo(opcion) {
-    let contenido = "";
-    switch(opcion) {
-        case "laboratorios":
-            contenido = "<h3>Laboratorios</h3><p>Contamos con laboratorios de química, física y mecatrónica totalmente equipados.</p>";
-            break;
-        case "computo":
-            contenido = "<h3>Sala de Cómputo</h3><p>Disponemos de salas de cómputo con equipos modernos y acceso a internet de alta velocidad.</p>";
-            break;
-        case "auditorios":
-            contenido = "<h3>Auditorios</h3><p>Espacios amplios para conferencias, seminarios y eventos académicos.</p>";
-            break;
-        case "bibliotecas":
-            contenido = "<h3>Bibliotecas</h3><p>Bibliotecas con acervo digital y físico, abiertas para estudiantes y docentes.</p>";
-            break;
-        case "alumnos":
-            contenido = "<h3>Alumnos</h3><p>Más de 5,000 estudiantes forman parte de nuestra comunidad educativa.</p>";
-            break;
-        case "profesores":
-            contenido = "<h3>Profesores</h3><p>Docentes altamente capacitados y comprometidos con la excelencia académica.</p>";
-            break;
-        case "masinfo":
-            contenido = "<h3>Más Información</h3><p>Visita nuestras oficinas administrativas para conocer más sobre el campus.</p>";
-            break;
-        default:
-            contenido = "<p>Selecciona una opción para ver la información del campus.</p>";
-    }
-    document.getElementById("infoContent").innerHTML = contenido;
-}
-</script>
-<script>
-function toggleHelp() {
-    const box = document.getElementById("help-box");
-    box.style.display = (box.style.display === "block") ? "none" : "block";
-}
-</script>
-<script>
-function openLogin(tipo) {
-    document.getElementById("tipoDocumento").value = tipo; // guarda el tipo de documento
-    document.getElementById("loginModal").style.display = "block";
-}
-
-function closeLogin() {
-    document.getElementById("loginModal").style.display = "none";
-}
-</script>
-
-
