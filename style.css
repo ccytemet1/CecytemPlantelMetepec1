@@ -2449,3 +2449,92 @@ img {
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================================
+   SECCIÓN PROFESORES / PORTAL DOCENTE
+   ========================================================== */
+.profesores-section {
+    background-color: #ffffff;
+}
+
+.construccion-card {
+    background: #fcf9f9;
+    border: 2px dashed #BC955C; /* Borde punteado estilo aviso/construcción */
+    border-radius: 12px;
+    padding: 35px 25px;
+    max-width: 850px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(105, 28, 50, 0.05);
+}
+
+.badge-estado {
+    display: inline-block;
+    background-color: #BC955C;
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.construccion-intro {
+    color: #555555;
+    font-size: 0.95rem;
+    max-width: 650px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.profesores-features {
+    background: #ffffff;
+    border: 1px solid #e2d7d9;
+    border-radius: 8px;
+    padding: 25px;
+    text-align: left;
+}
+
+.profesores-features h3 {
+    color: #691C32;
+    font-size: 1.1rem;
+    margin-bottom: 18px;
+    text-align: center;
+}
+
+.features-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.features-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9rem;
+    color: #444444;
+    line-height: 1.4;
+}
+
+.feature-icon {
+    font-size: 1.3rem;
+    flex-shrink: 0;
+}
+
+/* Adaptación para pantallas de celular */
+@media (max-width: 768px) {
+    .construccion-card {
+        padding: 25px 15px;
+    }
+
+    .profesores-features {
+        padding: 18px 15px;
+    }
+
+    .features-list {
+        grid-template-columns: 1fr;
+    }
+}
