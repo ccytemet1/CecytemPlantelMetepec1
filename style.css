@@ -2538,3 +2538,515 @@ img {
         grid-template-columns: 1fr;
     }
 }
+/* ==========================================================
+   SECCIÓN EDUCACIÓN SUPERIOR Y CARRUSEL INFINITO
+   ========================================================== */
+.superior-section {
+    background-color: #ffffff;
+    border-top: 1px solid #e2d7d9;
+    overflow: hidden; /* Evita cualquier desborde horizontal */
+}
+
+.carrusel-superior {
+    margin-top: 25px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Sombras en los bordes para un efecto de difuminado visual */
+.carrusel-superior::before,
+.carrusel-superior::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 60px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carrusel-superior::before {
+    left: 0;
+    background: linear-gradient(to right, #ffffff, transparent);
+}
+
+.carrusel-superior::after {
+    right: 0;
+    background: linear-gradient(to left, #ffffff, transparent);
+}
+
+/* Pista animada del carrusel */
+.carrusel-track {
+    display: flex;
+    width: calc(240px * 12); /* Ancho sumado de las 12 tarjetas */
+    animation: carruselScroll 25s linear infinite;
+}
+
+.carrusel-track:hover {
+    animation-play-state: paused; /* Se pausa si el usuario pasa el cursor en PC */
+}
+
+.carrusel-item {
+    width: 240px;
+    padding: 0 10px;
+    flex-shrink: 0;
+}
+
+.uni-card {
+    background: #fcf9f9;
+    border: 1px solid #e2d7d9;
+    border-top: 3px solid #BC955C; /* Detalle dorado superior */
+    border-radius: 8px;
+    padding: 20px 15px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.uni-card:hover {
+    transform: translateY(-4px);
+    border-color: #691C32;
+}
+
+.uni-icon {
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.uni-card h4 {
+    color: #691C32;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+    font-weight: 700;
+}
+
+.uni-card p {
+    color: #666666;
+    font-size: 0.8rem;
+    line-height: 1.3;
+}
+
+/* Keyframe para animación infinita continua */
+@keyframes carruselScroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-240px * 6)); /* Desplaza exactamente la mitad del grupo */
+    }
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 768px) {
+    .carrusel-item {
+        width: 190px;
+    }
+
+    .carrusel-track {
+        width: calc(190px * 12);
+        animation-duration: 18s; /* Un poco más rápido en pantallas estrechas */
+    }
+
+    @keyframes carruselScroll {
+        0% {
+            transform: translateX(0);
+        }
+        100% {
+            transform: translateX(calc(-190px * 6));
+        }
+    }
+
+    .uni-card {
+        padding: 15px 10px;
+    }
+
+    .uni-card h4 {
+        font-size: 1rem;
+    }
+
+    .uni-card p {
+        font-size: 0.75rem;
+    }
+}
+/* Contenedor principal corregido para evitar desbordamientos */
+.segunda-vuelta-container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 20px auto 0 auto;
+  padding: 24px;
+  background-color: #ffffff;
+  border-left: 5px solid #691c32; /* Color guinda del tema */
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Encabezado y badge */
+.segunda-vuelta-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.segunda-vuelta-container h3 {
+  color: #691c32;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.badge-sub {
+  background-color: #f4e8eb;
+  color: #691c32;
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: normal;
+}
+
+/* Párrafo y Lista */
+.segunda-vuelta-container p {
+  color: #333333;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-top: 0;
+  margin-bottom: 16px;
+}
+
+.segunda-vuelta-lista {
+  margin: 0 0 20px 0;
+  padding-left: 20px;
+  list-style-type: disc;
+}
+
+.segunda-vuelta-lista li {
+  color: #4a4a4a;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+.segunda-vuelta-lista li strong {
+  color: #1a1a1a;
+}
+
+/* Botón de Acción */
+.segunda-vuelta-action {
+  margin-bottom: 18px;
+}
+
+.btn-inicia-proceso {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background-color: #691c32;
+  color: #ffffff !important;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.25s ease, transform 0.15s ease, box-shadow 0.25s ease;
+  box-shadow: 0 3px 8px rgba(105, 28, 50, 0.25);
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.btn-inicia-proceso:hover {
+  background-color: #501324;
+  transform: translateY(-1px);
+  box-shadow: 0 5px 12px rgba(105, 28, 50, 0.35);
+}
+
+.btn-inicia-proceso:active {
+  transform: translateY(0);
+}
+
+/* Bloque de Nota */
+.segunda-vuelta-nota {
+  background-color: #f9f9f9;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 0.88rem;
+  color: #555555;
+  border: 1px solid #eeeeee;
+}
+
+/* Adaptación para pantallas móviles */
+@media (max-width: 600px) {
+  .segunda-vuelta-container {
+    padding: 16px;
+  }
+  
+  .btn-inicia-proceso {
+    width: 100%; /* El botón ocupa todo el ancho en celulares */
+    padding: 12px 16px;
+  }
+}
+/* ==========================================================
+   SECCIÓN UNIVERSIDADES EN LÍNEA (UNADM / UNRC)
+   ========================================================== */
+.linea-section {
+    background-color: #fcf9f9;
+    border-top: 1px solid #e2d7d9;
+}
+
+.linea-card {
+    background: #ffffff;
+    border: 1px solid #e2d7d9;
+    border-top: 4px solid #691C32; /* Tira guinda en la parte superior */
+    border-radius: 12px;
+    padding: 35px 25px;
+    box-shadow: 0 4px 15px rgba(105, 28, 50, 0.06);
+    text-align: center;
+}
+
+.badge-opcion {
+    display: inline-block;
+    background-color: #BC955C; /* Acento dorado */
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.linea-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin: 30px 0 20px 0;
+    text-align: left;
+}
+
+.uni-linea-item {
+    background: #fdfbfb;
+    border: 1px solid #e2d7d9;
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.uni-linea-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 14px rgba(105, 28, 50, 0.1);
+}
+
+.uni-linea-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.uni-linea-header h3 {
+    font-size: 1.4rem;
+    color: #691C32;
+    font-weight: 700;
+}
+
+.uni-badge {
+    background-color: #4A1021;
+    color: #ffffff;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.uni-linea-item h4 {
+    font-size: 0.95rem;
+    color: #333333;
+    margin-bottom: 8px;
+}
+
+.uni-linea-item p {
+    font-size: 0.85rem;
+    color: #555555;
+    line-height: 1.5;
+    margin-bottom: 18px;
+}
+
+.btn-uni-linea {
+    display: inline-block;
+    background-color: #691C32;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 9px 14px;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+    transition: background-color 0.2s ease;
+}
+
+.btn-uni-linea:hover {
+    background-color: #4A1021;
+}
+
+.linea-footer-note {
+    font-size: 0.85rem;
+    color: #666666;
+    margin-top: 15px;
+}
+
+/* Adaptación para dispositivos móviles */
+@media (max-width: 768px) {
+    .linea-card {
+        padding: 25px 15px;
+    }
+
+    .linea-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .uni-linea-header {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 6px;
+    }
+}
+/* ==========================================================
+   BLOQUE FIN DE PÁGINA
+   ========================================================== */
+.fin-pagina-section {
+    padding: 30px 0;
+    background-color: #fcf9f9;
+}
+
+.fin-pagina-card {
+    background: #ffffff;
+    border: 1px dashed #BC955C; /* Detalle dorado punteado */
+    border-radius: 8px;
+    padding: 20px 15px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.fin-pagina-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.fin-pagina-card h3 {
+    color: #691C32; /* Guinda institucional */
+    font-size: 1.05rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.fin-pagina-card p {
+    color: #666666;
+    font-size: 0.85rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+@media (max-width: 768px) {
+    .fin-pagina-card {
+        padding: 16px 12px;
+    }
+}
+/* ==========================================================
+   BLOQUE DE SECCIONES VISITADAS / RESUMEN
+   ========================================================== */
+.visto-section {
+    padding: 20px 0 30px 0;
+    background-color: #fcf9f9;
+}
+
+.visto-card {
+    background: #ffffff;
+    border: 1px solid #e2d7d9;
+    border-top: 3px solid #691C32; /* Tira guinda superior */
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.visto-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.visto-icon {
+    font-size: 1.4rem;
+}
+
+.visto-card h3 {
+    color: #691C32;
+    font-size: 1.05rem;
+    font-weight: 700;
+}
+
+.visto-card p {
+    color: #666666;
+    font-size: 0.85rem;
+    margin-bottom: 15px;
+}
+
+/* Red de etiquetas interactivas */
+.visto-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.visto-tag {
+    display: inline-block;
+    background-color: #f4ecee;
+    color: #4A1021;
+    border: 1px solid #e2d7d9;
+    border-radius: 20px;
+    padding: 6px 14px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.visto-tag:hover {
+    background-color: #691C32;
+    color: #ffffff;
+    border-color: #691C32;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .visto-card {
+        padding: 15px;
+    }
+
+    .visto-tag {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+}
