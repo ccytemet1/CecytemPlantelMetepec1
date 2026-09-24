@@ -1,3 +1,29 @@
+let currentSlideIndex = 0;
+const slides = document.querySelectorAll('.banner-slide');
+
+function showSlide(index) {
+  if (slides.length === 0) return;
+  
+  slides.forEach(slide => slide.classList.remove('active'));
+  
+  if (index >= slides.length) currentSlideIndex = 0;
+  else if (index < 0) currentSlideIndex = slides.length - 1;
+  else currentSlideIndex = index;
+  
+  slides[currentSlideIndex].classList.add('active');
+}
+
+function moveBannerSlide(step) {
+  showSlide(currentSlideIndex + step);
+}
+
+// Rotación automática cada 6 segundos
+setInterval(() => {
+  moveBannerSlide(1);
+}, 6000);
+
+
+
 document.addEventListener("DOMContentLoaded", function () {
     // 1. Elementos de Navegación
     const menuToggle = document.getElementById('menu-toggle');
